@@ -4,28 +4,35 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>01.01 [Review]</title>
+	<style>
+		.container{
+			border:5px solid black;
+			border-radius: 25px;
+			text-align: center;
+			width:100%;
+		}
+		#list{
+			text-align: left;
+			font-variant-caps:unicase;
+		}
+	</style>
 
 </head>
 <body>
 <div class="container">
-	<div class="row">
 	<h1>SHOPPING LIST</h1>
-</div>
-	<div class="row">
 		
 <!--form-->
 	<div>
 
-	<input id="item" class="col" type="text" placeholder="enter item name" />
-	<input id="price" class="col" type="text" placeholder="enter item price" />
+	<input id="item" class="col" type="text" placeholder="enter item name" required/>
+	<input id="price" class="col" type="text" placeholder="enter item price" required/>
 	<button class="col" id="submit" type="submit" onclick="addItem()">+</button>
 	<button id="clear" onclick="removeItem()">Clear Items</button>
 		
-		</div>
-<ul id="list">
-				 
-</ul>					 
-</div>
+	</div>
+	<hr/>
+<ul id="list"></ul>					 
 </div><!--container-->
 
 <script src="js/main.js"></script>
