@@ -14,22 +14,23 @@
 			//condition for each button
 			if(this.id == 'submit'){
 				if (item.value === null || item.value === "" || !isNaN(item.value)) {
-					alert("Please enter an item to add");     
+					displayItemError();  
 				}
 				else if (price.value === null || price.value === "") {
 					if(price.style.display==="none")
 						price.style.display="inline-block";
 						
-					alert("Please enter the item price to complete adding the item");
+					displayPriceError();
 				}
 				else{
+					displaySuccess();
 					addItem();
 				}
 			}
 			if(this.id == 'clear'){
 					price.style.display="none";
 					if (item.value === null || item.value === "" || !isNaN(item.value)) {
-					alert("Please enter an item to delete");
+					displayInfo();
 				}
 				else{
 					removeItem();
@@ -38,7 +39,44 @@
 		});
 	}
 
-		const addItem = () => {	
+const displaySuccess = () => {
+	new Noty({
+    theme: 'metroui',
+	type: 'success',
+	layout: 'topRight',
+    text: 'Successfully added an item to the list',
+	timeout:2500,
+}).show();
+}
+const displayItemError = () => {
+	new Noty({
+    theme: 'metroui',
+	type: 'error',
+	layout: 'topRight',
+    text: 'Please enter an item to add',
+	timeout:2500,
+}).show();
+}
+const displayPriceError = () => {
+	new Noty({
+    theme: 'metroui',
+	type: 'error',
+	layout: 'topRight',
+    text: 'Please enter the item price to complete adding the item',
+	timeout:2500,
+}).show();
+}
+const displayInfo = () => {
+	new Noty({
+    theme: 'metroui',
+	type: 'info',
+	layout: 'topRight',
+    text: 'Please enter an item to delete',
+	timeout:2500,
+}).show();
+}
+
+const addItem = () => {	
     const li = document.createElement("li");
     li.setAttribute('id',item.value);
     li.appendChild(document.createTextNode(item.value+" - $"+ price.value));
