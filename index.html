@@ -3,32 +3,44 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="lib/noty.css" rel="stylesheet">
+<link href="node_modules/noty/lib/noty.css" rel="stylesheet">
+<link href="node_modules/noty/lib/themes/metroui.css">
+<script src="node_modules/noty/lib/noty.js" type="text/javascript"></script>
 <title>01.01 [Review]</title>
 	<style>
 		.container{
 			border:5px solid black;
 			border-radius: 25px;
 			text-align: center;
-			width:100%;
+			width:400px;
+			margin: 3% 0% 0% 7%;
 		}
 		#list{
 			text-align: left;
 			font-variant-caps:unicase;
 		}
+		p{
+			color:grey;
+			margin: 3% 7% 3% 7%;
+		}
+
 	</style>
 
 </head>
 <body>
 <div class="container">
 	<h1>SHOPPING LIST</h1>
-		
+	<p><small>Add the items and their prices, that you need below. To delete, an item, type in the item that you need to remove.</small></p>
+	<br/>
+	
 <!--form-->
 	<div>
 
 	<input id="item" class="col" type="text" placeholder="enter item name" required/>
 	<input id="price" class="col" type="text" placeholder="enter item price" required/>
-	<button class="col" id="submit" type="submit" onclick="addItem()">+</button>
-	<button id="clear" onclick="removeItem()">Clear Items</button>
+	<button class="col button" id="submit" type="button" >+</button>
+	<button class="col button" id="clear" type="button">Clear Items</button>
 		
 	</div>
 	<hr/>
