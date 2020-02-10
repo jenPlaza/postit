@@ -1,6 +1,7 @@
 // JavaScript Document
 import React, {Component} from 'react';
 
+//Fix your syntax
 class Classes extends Component {
 	render(){
 		return(

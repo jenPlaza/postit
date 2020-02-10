@@ -1,6 +1,8 @@
 // JavaScript Document
-import React, {Component} from 'react';
-
+//import React, {Component} from 'react';
+//Component not needed. You did not use the Component module.
+import React from 'react';
+//Fix your syntax
 const Consts = props => {
 		return(
 		<form onSubmit={props.addName}>

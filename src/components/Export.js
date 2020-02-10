@@ -1,6 +1,7 @@
 // JavaScript Document
 import React, {Component} from 'react';
 
+//Fix your syntax
 export default class Exports extends Component {
 	render(){
 		return(
