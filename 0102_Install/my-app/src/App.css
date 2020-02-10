@@ -43,3 +43,7 @@
 .App {
   text-align: center;
 }
+.AppResponse {
+  text-align: left;
+	padding:0% 3% 0% 3%;
+}
