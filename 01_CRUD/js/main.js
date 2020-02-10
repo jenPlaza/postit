@@ -1,5 +1,5 @@
 
-  var shopList = document.getElementById("list");
+var shopList = document.getElementById("list");
   var item = document.getElementById("item");
   var price = document.getElementById("price");
 
@@ -33,7 +33,7 @@
 					displayInfo();
 				}
 				else{
-					removeItem();
+					areYouSure();
 				}
 			}
 		});
@@ -73,6 +73,26 @@ const displayInfo = () => {
 	layout: 'topRight',
     text: 'Please enter an item to delete',
 	timeout:2500,
+}).show();
+}
+
+
+const areYouSure = () => {
+	new Noty({
+    theme: 'metroui',
+	type: 'warning',
+	layout:'topRight',
+    text: 'Do you want to continue deleting this item?',
+	timeout:1200,
+	buttons:[
+	Noty.button('Yes', 'btn', function(){
+			removeItem();
+		}, 
+		{id:'btnYes', 'data-status': 'ok'}),
+		Noty.button('No', 'btn', function(){
+		areYouSure.close();
+		}),
+	]
 }).show();
 }
 
