@@ -1,6 +1,3 @@
-
-// Do not use vars. Change to const or let
-
 var shopList = document.getElementById("list");
   var item = document.getElementById("item");
   var price = document.getElementById("price");
@@ -77,7 +74,6 @@ const displayInfo = () => {
 	timeout:2500,
 }).show();
 }
-
 
 const areYouSure = () => {
 	new Noty({

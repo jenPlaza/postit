@@ -6,7 +6,6 @@
 			text-align: center;
 			width:90%;
 			margin: 25% 5% 0% 5%;
-
 			background-color: orange;
 		}
 		#list{
@@ -25,7 +24,6 @@
 			border:none;
 			height: 25px;
 		}
-
 	.btn{
 		margin: 0px 5px 3% 10px;
 		background-color: transparent;
@@ -33,10 +31,10 @@
 		color: lightgoldenrodyellow;
 	}
 
-	/* Correct Syntax */
 @media (min-width: 768px) {
 .container{
 			width:55%;
 			margin-top:5%;
 		}
 }
+
