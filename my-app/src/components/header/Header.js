@@ -2,26 +2,25 @@
 import React from 'react'
 import './Header.css'
 import Nav from '../nav/Nav'
+import { Container, Row, Col } from 'react-grid-system';
 
 const Header = props => {
 	return(
-		<header style={styles.header}>
-		<h1 style={styles.h1}>{props.pgTitle}</h1>
-		<Nav />
+		<header style={styles.container}>
+			<Row>
+				<Col xs={12} style={styles.col}>
+					<Nav />
+				</Col>
+			</Row>
 		</header>
+		
 	)
 }
 export default Header
 
 const styles ={
-	header:{
+	container:{
 		border:'1px solid blue',
-		display:'flex',
-		flexDirection:'row',
-		justifyContent: 'space-between',
-		padding:'1%'
+		width:'100%',
 	},
-	h1:{
-		fontsize:'1.25em'
-	}
 }
