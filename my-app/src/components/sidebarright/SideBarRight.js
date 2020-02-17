@@ -1,6 +1,6 @@
 // JavaScript Document
 import React from 'react'
-import '../sidebarright/SideBarRight.css'
+/*import '../sidebarright/SideBarRight.css'*/
 import whyBlog from '../../images/whyBlog.jpeg'
 import socialMedia from '../../images/socialMedia.jpg'
 
@@ -28,16 +28,18 @@ const styles ={
 	
 	li:{
 	display:'block',
-		border:'1px solid red',
+		/*border:'1px solid red',*/
 		listStyleType:'none',
-		paddingBottom:'1%'
+		marginTop:'-3%',
+		paddingBottom:'5%'
 },
 		btn:{
-		border:'none'
+		border:'none',
+		backgroundColor:'grey',
 },
 		img:{
-	display:'block',
-		width:'100%',
-			padding:'1%'
+		display:'block',
+		width:'90%',
+		padding:'1%'
 }
 }

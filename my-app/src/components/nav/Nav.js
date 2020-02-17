@@ -1,10 +1,9 @@
 // JavaScript Document
 import React from 'react'
 import './Nav.css'
-import Button from '../buttons/Button'
 import {GoSearch} from 'react-icons/go'
 import {FaUserCircle} from 'react-icons/fa'
-import { Container, Row, Col } from 'react-grid-system';
+import {Row, Col } from 'react-grid-system';
 
 const Nav = () => {
       return (
@@ -39,16 +38,12 @@ const Nav = () => {
 
 const styles ={
 	container:{
-		border:'1px solid navy',
 		height:'auto',
-	},
-	col:{
-		border:'1px solid blue',
-		paddingTop:'1%',
 	},
 	search:{
 		border:'1px solid black',
 		height:'32px',
+		backgroundColor:'white',
 	},
 	searchBox:{
 		border:'none',
@@ -56,14 +51,14 @@ const styles ={
 		height:'30px',
 	},
 	avatar:{
-		border:'1px solid green',
+		/*border:'1px solid green',*/
 		float:'right',
 		width:'100%',
 		display:'flex',
 		justifyContent: 'center',
 	},
 	p:{
-		border:'1px solid lime',
+		/*border:'1px solid lime',*/
 		marginTop:'5px',
 		marginLeft:'3%',
 		fontSize:'1.3em',

@@ -1,8 +1,8 @@
 // JavaScript Document
 import React from 'react'
 import './Footer.css'
-import logo2 from '../../images/postIt2.png'
-import { Container, Row, Col } from 'react-grid-system';
+import logo2 from '../../images/ptBtn3.png'
+import { Row, Col } from 'react-grid-system';
 
 const Footer = () => {
 	return(
@@ -14,21 +14,21 @@ const Footer = () => {
 	  		</Col>
 	  		<Col md={2} style={styles.col}>
 	  			<h2 style={styles.h2}>Help</h2>
-				<p><a style={styles.a} href='#'>Community</a></p>
-				<p><a style={styles.a} href='#'>Resources</a></p>
-				<p><a style={styles.a} href='#'>Contact</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Community</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Resources</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Contact</a></p>
 	  		</Col>
 			<Col md={2} style={styles.col}>
 	  			<h2 style={styles.h2}>About</h2>
-				<p><a style={styles.a} href='#'>Company</a></p>
-				<p><a style={styles.a} href='#'>Blog</a></p>
-				<p><a style={styles.a} href='#'>Newsletter</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Company</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Blog</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Newsletter</a></p>
 	  		</Col>
 			<Col md={2} style={styles.col}>
 	  			<h2 style={styles.h2}>Terms & Policies</h2>
-				<p><a style={styles.a} href='#'>Policies</a></p>
-				<p><a style={styles.a} href='#'>Terms of Use</a></p>
-				<p><a style={styles.a} href='#'>Code of Contact</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Policies</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Terms of Use</a></p>
+				<p><a style={styles.a} href='https://reactjs.org'>Code of Contact</a></p>
 	  		</Col>
 	  	</Row>
 		</footer>
@@ -38,12 +38,15 @@ export default Footer
 
 const styles ={
 		container:{
-		border:'1px solid green',
+		backgroundColor:'white',
+		padding:'5%',
+		/*border:'1px solid green',*/
 		width:'100%',
 		height:'auto',
+		
 	},
 	col:{
-		border:'1px solid black',
+		/*border:'1px solid black',*/
 		height:'auto',
 		color:'grey',
 	},
@@ -51,9 +54,9 @@ const styles ={
 		fontsize:'1.25em',
 	},
 	logo2:{
-		width:'20%',
+		width:'17%',
 		float:'right',
-		marginRight:'5%',
+		marginRight:'2%',
 	},
 	a:{
 		color:'grey',
