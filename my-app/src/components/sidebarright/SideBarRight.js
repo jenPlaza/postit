@@ -30,16 +30,16 @@ const styles ={
 	display:'block',
 		/*border:'1px solid red',*/
 		listStyleType:'none',
-		marginTop:'-3%',
-		paddingBottom:'5%'
+		
 },
 		btn:{
 		border:'none',
-		backgroundColor:'#878787',
+		backgroundColor:'transparent',
 },
 		img:{
 		display:'block',
 		width:'90%',
-		padding:'1%'
-}
+		padding:'1%',
+		marginTop:'0%',
+},
 }

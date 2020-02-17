@@ -4,6 +4,7 @@ import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import MyForm from './components/myform/MyForm'
 import logo from '../src/images/postIt.png'
+import imgUrl from '../src/images/post.jpg'
 import SideBarLeft from './components/sidebarleft/SideBarLeft'
 import SideBarRight from './components/sidebarright/SideBarRight'
 import ListItem from './components/listitems/ListItems'
@@ -62,9 +63,12 @@ class App extends React.Component {
 	  <hr />
 	  	<Row style={styles.bodyRow}>
     		<Col md={2} style={styles.col}>
+	  			<div style={styles.div}>
 				<SideBarLeft />
+	  			</div>
 	  		</Col>
 	  		<Col md={6} style={styles.col}>
+	  <div style={styles.divform}>
 	  			<MyForm
 	  				titleBind={this.titleBind}
 	  				titleInput={this.state.titleInput}
@@ -76,9 +80,12 @@ class App extends React.Component {
 	  			 />
 	  
 	  			{list}
+	  </div>
 	  		</Col>
 	  		<Col md={4} style={styles.col}>
+	  <div style={styles.divSBRight}>
     			<SideBarRight/>
+	  </div>
 	  		</Col>
 	  	</Row>
 	   	<Row>
@@ -93,7 +100,7 @@ export default App;
 
 const styles ={
 	container:{
-		backgroundColor:'#E7E7E7',
+		backgroundImage: 'url(' + imgUrl + ')',								
 		height:'auto'
 	},
 	headerRow:{
@@ -105,12 +112,27 @@ const styles ={
 	},
 	col:{
 		height:'auto',
-		backgroundColor:'#878787',
+		backgroundColor:'rgba(135, 135, 135, 0.6)',
 		paddingTop:'5%',
 	},
 	colWt:{
 		height:'auto',
-		backgroundColor:'#E7E7E7',
+		backgroundColor:'rgba(231, 231, 231, 0.4)',
 		paddingTop:'5%',
+	},
+		div:{
+		marginTop:'-15%',
+		height:'100%',
+		backgroundColor:'rgba(135, 135, 135, 0.6)',
+	},
+		divform:{
+		marginTop:'-4%',
+		height:'100%',
+		backgroundColor:'rgba(135, 135, 135, 0.6)',
+	},
+		divSBRight:{
+		marginTop:'-9%',
+		height:'100%',
+		backgroundColor:'rgba(135, 135, 135, 0.6)',
 	},
 }

@@ -23,6 +23,6 @@ const styles ={
 		width:'100%',
 	},
 	colWt:{
-		backgroundColor:'#E7E7E7',
+		backgroundColor:'rgba(231, 231, 231, 0)',
 	},
 }

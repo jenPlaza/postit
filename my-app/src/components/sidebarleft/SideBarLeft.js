@@ -24,13 +24,15 @@ export default SideBarLeft;
 const styles ={
 	container:{
 		height:'auto',
-		marginTop:'0%',
+		
 	},
 	btn:{
 	display:'block',
-		backgroundColor:'#878787',
+		backgroundColor:'rgba(135, 135, 135, 0)',
 		border:'none',
 		fontSize:'1.5em',
+		marginTop:'5%',
+		
 		paddingBottom:'5%',
 		color:'white',
 }

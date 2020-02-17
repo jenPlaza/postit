@@ -4,14 +4,17 @@ col {
   backgroundColor:'#878787';
 }
 Row{
-	backgroundColor:'#E7E7E7';
+	backgroundColor:'rgba(231, 231, 231, 0.9)',
+	/*backgroundColor:'#E7E7E7';*/
 }
 Footer{
 	backgroundColor:'white';
 }
 button{
-	backgroundColor:'#878787'
+	backgroundColor:'rgba(135, 135, 135, 0.6)',
+	/*backgroundColor:'#878787'*/
 }
 form, li{
-	backgroundColor:'#B9B9B9';
+	backgroundColor:'rgba(185, 185, 185, 0.6)',
+	/*backgroundColor:'#B9B9B9';*/
 }

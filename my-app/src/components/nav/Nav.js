@@ -43,12 +43,13 @@ const styles ={
 	search:{
 		border:'1px solid black',
 		height:'32px',
-		backgroundColor:'white',
+		backgroundColor:'rgba(231, 231, 231, 0.4)',
 	},
 	searchBox:{
 		border:'none',
 		width:'95%',
 		height:'30px',
+		backgroundColor:'rgba(231, 231, 231, 0.4)',
 	},
 	avatar:{
 		/*border:'1px solid green',*/
