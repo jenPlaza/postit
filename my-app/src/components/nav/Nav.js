@@ -41,9 +41,8 @@ const styles ={
 		height:'auto',
 	},
 	search:{
-		border:'1px solid black',
 		height:'32px',
-		backgroundColor:'rgba(231, 231, 231, 0.4)',
+		backgroundColor:'rgba(231, 231, 231, 0.5)',
 	},
 	searchBox:{
 		border:'none',
@@ -52,14 +51,12 @@ const styles ={
 		backgroundColor:'rgba(231, 231, 231, 0.4)',
 	},
 	avatar:{
-		/*border:'1px solid green',*/
 		float:'right',
 		width:'100%',
 		display:'flex',
 		justifyContent: 'center',
 	},
 	p:{
-		/*border:'1px solid lime',*/
 		marginTop:'5px',
 		marginLeft:'3%',
 		fontSize:'1.3em',

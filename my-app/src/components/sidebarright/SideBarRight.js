@@ -28,9 +28,7 @@ const styles ={
 	
 	li:{
 	display:'block',
-		/*border:'1px solid red',*/
 		listStyleType:'none',
-		
 },
 		btn:{
 		border:'none',

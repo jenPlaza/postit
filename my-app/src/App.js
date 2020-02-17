@@ -27,11 +27,10 @@ class App extends React.Component {
 	
 	handleSubmit = e => {
 	e.preventDefault();
-	this.state.postListing.push({
-		postTitle:this.state.titleInput,
-		postDescription:this.state.descriptionInput
-	})
-    this.setState({postListing: this.state.postListing});
+	 this.setState({
+	postListing:[...this.state.postListing, {postTitle:this.state.titleInput, postDescription:this.state.descriptionInput}]
+});
+e.target.reset()
   }
 	
 	removeItem = key => {
@@ -133,6 +132,6 @@ const styles ={
 		divSBRight:{
 		marginTop:'-9%',
 		height:'100%',
-		backgroundColor:'rgba(135, 135, 135, 0.6)',
+		backgroundColor:'rgba(135, 135, 135, 0.5)',
 	},
 }

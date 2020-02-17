@@ -6,10 +6,8 @@ import {MdDelete} from 'react-icons/md'
 const ListItem = props => {
 	return(
 		<li key={props.id} style={styles.list}>
-		<div style={styles.icons}>
-		<FaEdit style={styles.faEdit} size={38}/>
-		<MdDelete style={styles.mdDelete} size={38} onClick={props.dlt}/>
-		</div>
+		<MdDelete style={styles.mdDelete} size={36} onClick={props.dlt}/>
+		<FaEdit style={styles.faEdit} size={36}/>
 			<div style={styles.items}>{props.val.postTitle}</div>
 			<div style={styles.items}>{props.val.postDescription}</div>
 		</li>
@@ -28,7 +26,10 @@ const styles ={
 	items:{
 		marginLeft:'3%',
 	},
-	icons:{
+	mdDelete:{
 		float:'right',
-	}
+	},
+	faEdit:{
+		float:'right',
+	},
 }

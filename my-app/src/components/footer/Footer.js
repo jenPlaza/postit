@@ -2,7 +2,8 @@
 import React from 'react'
 import './Footer.css'
 import logo2 from '../../images/ptBtn3.png'
-import { Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-grid-system'
+import {MdCopyright} from 'react-icons/md'
 
 const Footer = () => {
 	return(
@@ -10,7 +11,11 @@ const Footer = () => {
 		<footer style={styles.container}>
 	  	<Row>
 	   		<Col xs={3} style={styles.col}>
+		
 	  			<img src={logo2} alt="Logo2 icon" style={styles.logo2}/>
+		<div style={styles.copy}>
+				<p style={styles.p} ><MdCopyright size={19}/><b>2020 Post It.</b></p>
+		</div>
 	  		</Col>
 	  		<Col md={2} style={styles.col}>
 	  			<h2 style={styles.h2}>Help</h2>
@@ -58,5 +63,11 @@ const styles ={
 	},
 	a:{
 		color:'grey',
+	},
+	copy:{
+		bottom:'0px',
+		position:'absolute',
+		fontSize:'0.95em',
+		
 	},
 }

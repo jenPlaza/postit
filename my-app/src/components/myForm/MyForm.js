@@ -13,10 +13,8 @@ const MyForm = props =>{
 		<p>New Item:{props.titleInput}</p>
 		<input type='text' style={styles.input} name='postDescription' value={props.postDescription} onChange={props.descriptionBind} placeholder="Description" required/>
 		<p>New Item:{props.descriptionInput}</p>
-		<Button type='submit' id='submit' btnText='Post' className='button' />
+		<Button type='submit' btnText='Post' />
       </form>
-		
-		<ul className='list'></ul>	
 		</div>
 		
     );
