@@ -3,7 +3,6 @@ import React from 'react';
 import Button from '../buttons/Button'
 
 const MyForm = props =>{
-
     return (
 		<div style={styles.container}>
       	<form style={styles.myform} onSubmit={props.handleSubmit}>
@@ -13,12 +12,13 @@ const MyForm = props =>{
 		<p>New Item:{props.titleInput}</p>
 		<input type='text' style={styles.input} name='postDescription' value={props.postDescription} onChange={props.descriptionBind} placeholder="Description" required/>
 		<p>New Item:{props.descriptionInput}</p>
-		<Button type='submit' btnText='Post' />
+		<Button type='submit' btnText='Post'/>
       </form>
 		</div>
-		
     );
 }
+
+
 
 export default MyForm;
 

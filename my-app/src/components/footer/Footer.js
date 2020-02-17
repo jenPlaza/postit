@@ -55,11 +55,13 @@ const styles ={
 	},
 	h2:{
 		fontsize:'1.25em',
+		marginTop:'-0.5%',
 	},
 	logo2:{
 		width:'17%',
 		float:'right',
-		marginRight:'2%',
+		marginRight:'1%',
+		
 	},
 	a:{
 		color:'grey',
