@@ -28,7 +28,7 @@ const styles ={
 	},
 	btn:{
 	display:'block',
-		backgroundColor:'grey',
+		backgroundColor:'#878787',
 		border:'none',
 		fontSize:'1.5em',
 		paddingBottom:'5%',

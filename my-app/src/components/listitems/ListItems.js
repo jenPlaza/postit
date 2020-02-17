@@ -8,7 +8,7 @@ const ListItem = props => {
 		<li key={props.id} style={styles.list}>
 		<div style={styles.icons}>
 		<FaEdit style={styles.faEdit} size={38}/>
-		<MdDelete style={styles.mdDelete} size={38}/>
+		<MdDelete style={styles.mdDelete} size={38} onClick={props.dlt}/>
 		</div>
 			<div style={styles.items}>{props.val.postTitle}</div>
 			<div style={styles.items}>{props.val.postDescription}</div>
@@ -31,5 +31,4 @@ const styles ={
 	icons:{
 		float:'right',
 	}
-
 }

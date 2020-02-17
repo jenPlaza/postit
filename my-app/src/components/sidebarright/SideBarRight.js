@@ -35,7 +35,7 @@ const styles ={
 },
 		btn:{
 		border:'none',
-		backgroundColor:'grey',
+		backgroundColor:'#878787',
 },
 		img:{
 		display:'block',

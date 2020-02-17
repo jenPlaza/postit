@@ -32,6 +32,11 @@ class App extends React.Component {
 	})
     this.setState({postListing: this.state.postListing});
   }
+	
+	removeItem = key => {
+		this.state.postListing.splice(key,1)
+		this.setState({postListing: this.state.postListing})
+	}
 
 	titleBind = e => {
 	this.setState({titleInput: e.target.value})
@@ -42,7 +47,7 @@ class App extends React.Component {
 	
   render() {
 	  let list = this.state.postListing.map((element,i) => {
-		  return <ListItem key={i} val={element} />
+		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
 	  })
   return (
 	  <div style={styles.container}>
@@ -100,7 +105,7 @@ const styles ={
 	},
 	col:{
 		height:'auto',
-		backgroundColor:'grey',
+		backgroundColor:'#878787',
 		paddingTop:'5%',
 	},
 	colWt:{
