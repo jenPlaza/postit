@@ -12,7 +12,7 @@ const Nav = () => {
 				<Col md={9} style={styles.col}>
 		  		<form style={styles.search}>
 		  			<div>
-		 				<input type="text" id="mySearch" onKeyUp="myFunction()" placeholder="Search.." title="Type in a category" style={styles.searchBox}/>
+		 				<input placeholder="Search.." style={styles.searchBox}/>
 		  				<GoSearch style={styles.goSearch}/>
 		  			</div>
 		  		</form>

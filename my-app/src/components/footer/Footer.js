@@ -40,13 +40,11 @@ const styles ={
 		container:{
 		backgroundColor:'white',
 		padding:'5%',
-		/*border:'1px solid green',*/
 		width:'100%',
 		height:'auto',
 		
 	},
 	col:{
-		/*border:'1px solid black',*/
 		height:'auto',
 		color:'grey',
 	},

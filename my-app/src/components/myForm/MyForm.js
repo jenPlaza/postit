@@ -6,15 +6,14 @@ const MyForm = props =>{
 
     return (
 		<div style={styles.container}>
-      <form
-		style={styles.myform}
-		onSubmit={props.addTitle}>
+      	<form style={styles.myform} onSubmit={props.handleSubmit}>
+
 		<h1> Create A Post</h1>
-		<input type='text' style={styles.input} onChange={props.titleBind} placeholder="Title" className='title' />
+		<input type='text' style={styles.input} name='postTitle' value={props.postTitle} onChange={props.titleBind} placeholder="Title" />
 		<p>New Item:{props.titleInput}</p>
-		<input type='text' style={styles.input} onChange={props.descriptionBind} placeholder="Description" className='description' />
+		<input type='text' style={styles.input} name='postDescription' value={props.postDescription} onChange={props.descriptionBind} placeholder="Description" />
 		<p>New Item:{props.descriptionInput}</p>
-		<Button id='submit' btnText='Post' className='button' />
+		<Button type='submit' id='submit' btnText='Post' className='button' />
       </form>
 		
 		<ul className='list'></ul>	
@@ -23,7 +22,6 @@ const MyForm = props =>{
     );
 }
 
-// No need to connect()!
 export default MyForm;
 
 const styles ={
@@ -34,7 +32,8 @@ const styles ={
 		backgroundColor:'#B9B9B9',
 		color:'grey',
 		display:'flex',
-		flexDirection:'column'
+		flexDirection:'column',
+		borderRadius:'3px',
 	},
 	input:{
 		padding:'1%',

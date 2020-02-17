@@ -6,21 +6,44 @@ import MyForm from './components/myform/MyForm'
 import logo from '../src/images/postIt.png'
 import SideBarLeft from './components/sidebarleft/SideBarLeft'
 import SideBarRight from './components/sidebarright/SideBarRight'
+import ListItem from './components/listitems/ListItems'
 import { Row, Col } from 'react-grid-system';
 
 
 class App extends React.Component {
-	state ={
+	constructor(props) {     
+    super(props);
+	this.state ={
 		titleInput:'',
 		descriptionInput:'',
+		postListing: [
+			{postTitle:'', postDescription:''}
+		]
+	};
+
+	this.handleSubmit = this.handleSubmit.bind(this); 
 	}
-titleBind = e => {
+	
+	handleSubmit = e => {
+	e.preventDefault();
+	this.state.postListing.push({
+		postTitle:this.state.titleInput,
+		postDescription:this.state.descriptionInput
+	})
+    this.setState({postListing: this.state.postListing});
+  }
+
+	titleBind = e => {
 	this.setState({titleInput: e.target.value})
-}
-descriptionBind = e => {
+	}
+	descriptionBind = e => {
 	this.setState({descriptionInput: e.target.value})
-}
+	}
+	
   render() {
+	  let list = this.state.postListing.map((element,i) => {
+		  return <ListItem key={i} val={element} />
+	  })
   return (
 	  <div style={styles.container}>
 	  	<Row style={styles.headerRow}>
@@ -40,10 +63,14 @@ descriptionBind = e => {
 	  			<MyForm
 	  				titleBind={this.titleBind}
 	  				titleInput={this.state.titleInput}
-	  
+
 	  				descriptionBind={this.descriptionBind}
 	  				descriptionInput={this.state.descriptionInput}
+	  
+	  				handleSubmit={this.handleSubmit}
 	  			 />
+	  
+	  			{list}
 	  		</Col>
 	  		<Col md={4} style={styles.col}>
     			<SideBarRight/>
