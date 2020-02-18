@@ -1,5 +1,3 @@
-There should be nothing but a read me file on this repo until week 4. Except add your information to the repo.
-
 ## Project Name
 
 
