@@ -35,6 +35,7 @@ class App extends React.Component {
 	
 	handleSubmit = e => {
 		e.preventDefault();
+		//Add JS validation here as well. Not just HTML5
 		this.setState({
 		postListing:[...this.state.postListing, {postTitle:this.state.titleInput, postDescription:this.state.descriptionInput}]
 		});
