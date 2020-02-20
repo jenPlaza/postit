@@ -4,10 +4,11 @@ import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import MyForm from './components/myform/MyForm'
 import logo from '../src/images/postIt.png'
-import imgUrl from '../src/images/post.jpg'
+import imgUrl from '../src/images/postBkg.jpg'
 import SideBarLeft from './components/sidebarleft/SideBarLeft'
 import SideBarRight from './components/sidebarright/SideBarRight'
 import ListItem from './components/listitems/ListItems'
+import {FaUserCircle} from 'react-icons/fa'
 import { Row, Col } from 'react-grid-system';
 
 
@@ -15,8 +16,6 @@ class App extends React.Component {
 	constructor(props) {     
     super(props);
 	this.state ={
-		titleInput:'',
-		descriptionInput:'',
 		postListing: [
 			{postTitle:'', postDescription:''}
 		]
@@ -52,42 +51,52 @@ e.target.reset()
   return (
 	  <div style={styles.container}>
 	  	<Row style={styles.headerRow}>
-	   		<Col xs={3} style={styles.colWt}>
+	   		<Col sm={9} style={styles.logo}>
 	  			<img src={logo} alt="Logo icon"/>
 	  		</Col>
-	  		<Col md={9} style={styles.colWt}>
-	  			<Header/>
+	  		<Col sm={3} >
+	  			<div style={styles.avatar}>
+		  		<FaUserCircle style={styles.faUserCircle} size={38}/>
+		  		<p md={2} style={styles.p}>Log In</p>	
+		  		</div>
 	  		</Col>
 	  	</Row>
-	  <hr />
-	  	<Row style={styles.bodyRow}>
-    		<Col md={2} style={styles.col}>
-	  			<div style={styles.div}>
+	  	<Row style={styles.searchRow}>
+	  		<Col sm={11}>
+	  			<Header/>
+	  		</Col>
+	  	
+	  	</Row>
+	  
+	    <Row style={styles.bodyRow}>
+    		<Col sm={12} lg={3} style={styles.col}>
+	  			<div style={styles.divSBLeft}>
 				<SideBarLeft />
 	  			</div>
 	  		</Col>
-	  		<Col md={6} style={styles.col}>
-	  <div style={styles.divform}>
-	  			<MyForm
-	  				titleBind={this.titleBind}
-	  				titleInput={this.state.titleInput}
+	  		<Col sm={12} lg={5} style={styles.col}>
+	  			<div style={styles.divform}>
+	  			<MyForm style={styles.divform}
+	  			titleBind={this.titleBind}
+	  			titleInput={this.state.titleInput}
 
-	  				descriptionBind={this.descriptionBind}
-	  				descriptionInput={this.state.descriptionInput}
+	  			descriptionBind={this.descriptionBind}
+	  			descriptionInput={this.state.descriptionInput}
 	  
-	  				handleSubmit={this.handleSubmit}
+	  			handleSubmit={this.handleSubmit}
 	  			 />
 	  
 	  			{list}
-	  </div>
+	  			</div>
 	  		</Col>
-	  		<Col md={4} style={styles.col}>
-	  <div style={styles.divSBRight}>
+	  		<Col sm={12} lg={4} style={styles.col}>
+	  			<div style={styles.divSBRight}>
     			<SideBarRight/>
-	  </div>
+	  		</div>
 	  		</Col>
 	  	</Row>
-	   	<Row>
+	  
+	   	<Row style={styles.footerRow}>
     		<Footer/>
 	  	</Row>
 	 </div> 
@@ -99,39 +108,69 @@ export default App;
 
 const styles ={
 	container:{
-		backgroundImage: 'url(' + imgUrl + ')',								
-		height:'auto'
+		backgroundImage: 'url(' + imgUrl + ')',						
+		height:'auto',
+		overflow:'hidden',
 	},
 	headerRow:{
-		marginTop:'-4%',
+		padding:'2%',
+		backgroundColor:'white',
+		margin:'0',
+		width:'100%',
+	},
+	searchRow:{
+	paddingTop:'2%',
+	paddingBottom:'2%',
+	backgroundColor:'white',
+	justifyContent:'center',									
 	},
 	bodyRow:{
-		marginTop:'-5%',
-		padding:'6%',
+		marginTop:'8%',
+		/*padding:'4%',*/
+		marginBottom:'8%',
+		paddingTop:'2%',
+		paddingBottom:'3%',
+		textAlign:'center',
+		/*border:'3px solid rgba(135, 135, 135)',*/
+		backgroundColor:'rgba(24, 8, 0, 0.4)',
+		border:'3px solid rgba(24, 8, 0)',
 	},
-	col:{
+	footerRow:{
+	/*	padding:'3%',*/
+		backgroundColor:'white',							
+	},							
+	col:{						
 		height:'auto',
-		backgroundColor:'rgba(135, 135, 135, 0.6)',
-		paddingTop:'5%',
+		padding:'2%',								
+		/*marginTop:'8%',	
+		marginBottom:'8%',*/	
 	},
-	colWt:{
-		height:'auto',
-		backgroundColor:'rgba(231, 231, 231, 0.4)',
-		paddingTop:'5%',
+		logo:{
+		float:'left',
+		marginTop:'2%',
+		height:'140px',
 	},
-		div:{
-		marginTop:'-15%',
+	avatar:{
+		float:'right',
+		marginRight:'8%',
+	},
+	p:{
+		display:'none',									
+	},
+		divSBLeft:{
 		height:'100%',
-		backgroundColor:'rgba(135, 135, 135, 0.6)',
+		border:'3px solid rgba(135, 135, 135)',
+		/*backgroundColor:'rgba(135, 135, 135, 0.6)',*/
+		borderRadius:'5px', 
 	},
 		divform:{
-		marginTop:'-4%',
 		height:'100%',
 		backgroundColor:'rgba(135, 135, 135, 0.6)',
 	},
 		divSBRight:{
-		marginTop:'-9%',
 		height:'100%',
-		backgroundColor:'rgba(135, 135, 135, 0.5)',
+		border:'3px solid rgba(135, 135, 135)',
+		/*backgroundColor:'rgba(135, 135, 135, 0.5)',*/
+		borderRadius:'5px',
 	},
 }

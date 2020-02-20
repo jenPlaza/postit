@@ -6,7 +6,7 @@ import React from "react";
 class SideBarLeft extends React.Component {
   render() {
     return (
-      <Container style={styles.container}>
+      <Container style={styles.btn}>
 		<Row>
 			<Col md={12} style={styles.col}>
 				<button style={styles.btn}href="#">News Feed</button>
@@ -22,18 +22,13 @@ class SideBarLeft extends React.Component {
 export default SideBarLeft;
 
 const styles ={
-	container:{
-		height:'auto',
-		
-	},
 	btn:{
 	display:'block',
 		backgroundColor:'rgba(135, 135, 135, 0)',
 		border:'none',
-		fontSize:'1.5em',
+		fontSize:'1.3em',
 		marginTop:'5%',
-		
-		paddingBottom:'5%',
+		/*paddingBottom:'3%',*/
 		color:'white',
 }
 }

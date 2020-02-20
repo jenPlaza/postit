@@ -2,13 +2,13 @@
 import React from 'react'
 import './Header.css'
 import Nav from '../nav/Nav'
-import { Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-grid-system'
 
 const Header = props => {
 	return(
 		<header style={styles.container}>
-			<Row style={styles.colWt}>
-				<Col xs={12} style={styles.colWt}>
+			<Row style={styles.row}>
+				<Col style={styles.colWt}>
 					<Nav />
 				</Col>
 			</Row>
@@ -19,8 +19,8 @@ const Header = props => {
 export default Header
 
 const styles ={
-	container:{
-		width:'100%',
+	row:{
+
 	},
 	colWt:{
 		backgroundColor:'rgba(231, 231, 231, 0)',

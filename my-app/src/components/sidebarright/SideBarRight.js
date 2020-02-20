@@ -25,7 +25,6 @@ class SideBarRight extends React.Component {
 export default SideBarRight;
 
 const styles ={
-	
 	li:{
 	display:'block',
 		listStyleType:'none',
@@ -36,8 +35,7 @@ const styles ={
 },
 		img:{
 		display:'block',
-		width:'90%',
-		padding:'1%',
-		marginTop:'0%',
+		width:'100%',
+		marginLeft:'-4%',
 },
 }

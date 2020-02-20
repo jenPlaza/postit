@@ -14,9 +14,9 @@ export default MyBtn
 
 const styles ={
 	button:{
-		padding:'1%',
+		padding:'2%',
 		color:'rgb(163,173,194)',
-		margin:'3%',
+		margin:'1%',
 		fontSize:'1em',
 		fontWeight:'bold',
 		borderRadius:'50px',
