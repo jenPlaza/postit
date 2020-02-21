@@ -6,12 +6,17 @@ import {MdDelete} from 'react-icons/md'
 const ListItem = props => {
 	return(
 		<li key={props.id} style={styles.list}>
+<<<<<<< HEAD:my-app/src/components/listitems/ListItems.js
 		<div>
 		<MdDelete style={styles.mdDelete} size={36} onClick={props.dlt}/>
 		<FaEdit style={styles.faEdit} size={36}/>
 		</div>
+=======
+>>>>>>> origin/02_Application:src/components/listitems/ListItems.js
 			<div style={styles.items}>{props.val.postTitle}</div>
 			<div style={styles.items}>{props.val.postDescription}</div>
+			<MdDelete style={styles.mdDelete} size={36} onClick={props.dlt}/>
+			<FaEdit style={styles.faEdit} size={36}/>
 		</li>
 	)
 }
