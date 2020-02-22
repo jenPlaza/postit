@@ -16,6 +16,6 @@ const styles ={
 		width:'95%',
 		border:'none',
 		height:'30px',
-		backgroundColor:'rgba(231, 231, 231, 0.4)',
+		backgroundColor:'rgba(231, 231, 231, 0.5)',
 	},
 }
