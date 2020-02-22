@@ -1,40 +1,60 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/Header'
+/*import Header from './components/header/Header'*/
 import Footer from './components/footer/Footer'
 import MyForm from './components/myForm/MyForm'
-import logo from '../src/images/postIt.png'
-import imgUrl from '../src/images/postBkg.jpg'
 import SideBarLeft from './components/sidebarleft/SideBarLeft'
 import SideBarRight from './components/sidebarright/SideBarRight'
+
 import ListItem from './components/listitems/ListItems'
+
+import SearchInput from './components/search/SearchInput'
+import Search from './components/search/Search'
+
+import logo from '../src/images/postIt.png'
+import imgUrl from '../src/images/postBkg.jpg'
 import {FaUserCircle} from 'react-icons/fa'
+import {GoSearch} from 'react-icons/go';
 import { Row, Col } from 'react-grid-system';
 
+function searchMe(search){
+	return function(searchTitle){
+		return searchTitle.postTitle.toLowerCase().includes(search.toLowerCase()) || !search
+		//return searchTitle.titleInput.includes(search) || !search
+	}
+}
 
 class App extends React.Component {
 	state ={
 		titleInput:'',
 		descriptionInput:'',
-		postListing: []
-	};
-	//This is old.  Use an arrow function. Please watch my videos also. I will have the latest code.
+		postListing: [],
+		search:'',
+	}
 
+	//This is old.  Use an arrow function. Please watch my videos also. I will have the latest code.
 	// this.handleSubmit = this.handleSubmit.bind(this); 
 	// }
-	
-	handleSubmit = e => {
-		e.preventDefault();
-		//Add JS validation here as well. Not just HTML5
-		this.setState({
-		postListing:[...this.state.postListing, {postTitle:this.state.titleInput, postDescription:this.state.descriptionInput}]
-		});
-		e.target.reset()
+
+componentDidMount(){
+if(localStorage.getItem('postListing')){
+		let postL = JSON.parse(localStorage.getItem('postListing'))
+		this.setState({postListing:postL})
 	}
-	
+}
+
+handleSubmit = e => {
+	e.preventDefault();
+	let postL = [...this.state.postListing, {postTitle:this.state.titleInput, postDescription:this.state.descriptionInput}]
+	localStorage.setItem('postListing', JSON.stringify(postL))
+	e.target.reset()
+  }
+
 	removeItem = key => {
-		this.state.postListing.splice(key,1)
+		let postL = this.state.postListing
+			this.state.postListing.splice(key,1)
 		this.setState({postListing: this.state.postListing})
+		localStorage.setItem('postListing', JSON.stringify(postL))
 	}
 
 	//Make this global. You can write a function that will take the value based off the name attribute.
@@ -47,28 +67,42 @@ class App extends React.Component {
 		this.setState({descriptionInput: e.target.value})
 	}
 	
-	render() {
-	  let list = this.state.postListing.map((element,i) => {
+	searchInfo = e =>{
+	this.setState({search: e.target.value})
+}
+	
+	render() { 
+		const{search} = this.state
+		let searchlist = this.state.postListing.filter(searchMe(search)).map((element,i) => {
+			  return <Search key={i} val={element}/>
+	  })
+	  
+			let list = this.state.postListing.map((element,i) => {
 		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
 	  })
   return (
 	  <div style={styles.container}>
 	  	<Row style={styles.headerRow}>
-	   		<Col sm={9} style={styles.logo}>
-	  			<img src={logo} alt="Logo icon"/>
-	  		</Col>
-	  		<Col sm={3} >
+	  <Col sm={12} >
 	  			<div style={styles.avatar}>
 		  		<FaUserCircle style={styles.faUserCircle} size={38}/>
 		  		<p md={2} style={styles.p}>Log In</p>	
 		  		</div>
 	  		</Col>
-	  	</Row>
-	  	<Row style={styles.searchRow}>
-	  		<Col sm={11}>
-	  			<Header/>
+	  </Row>
+	  <Row style={styles.searchRow}>
+	   		<Col xs={12} md={3} lg={2}style={styles.logo}>
+	  			<img src={logo} alt="Logo icon"/>
 	  		</Col>
-	  	
+	  		<Col xs={12} md={9} lg={9}>
+		  		<form style={styles.search}>	
+	  <SearchInput placeholder="Search..." searchInfo={this.searchInfo} />
+	  <GoSearch style={styles.goS}/>
+	  <ul style={styles.searchL}>
+	  {searchlist}
+	  </ul>
+		  		</form>
+	  		</Col>
 	  	</Row>
 	  
 	    <Row style={styles.bodyRow}>
@@ -103,7 +137,7 @@ class App extends React.Component {
     		<Footer/>
 	  	</Row>
 	 </div> 
-  	);
+  );
   }
 }
 
@@ -122,14 +156,12 @@ const styles ={
 		width:'100%',
 	},
 	searchRow:{
-	paddingTop:'2%',
-	paddingBottom:'2%',
+	padding:'2%',
 	backgroundColor:'white',
-	justifyContent:'center',									
+	justifyContent:'center',											  
 	},
 	bodyRow:{
 		marginTop:'8%',
-		/*padding:'4%',*/
 		marginBottom:'8%',
 		paddingTop:'2%',
 		paddingBottom:'3%',
@@ -144,9 +176,9 @@ const styles ={
 		height:'auto',
 		padding:'2%',								
 	},
-		logo:{
+	logo:{
 		float:'left',
-		marginTop:'2%',
+		marginTop:'-8%',									  
 		height:'140px',
 	},
 	avatar:{
@@ -155,6 +187,20 @@ const styles ={
 	},
 	p:{
 		display:'none',									
+	},
+	search:{
+		height:'32px',
+		backgroundColor:'rgba(231, 231, 231, 0.8)',
+		marginTop:'8%',
+	},
+	searchL:{
+	color:'grey',
+	listStyleType:'none',
+	},
+	goS:{
+		float:'right',
+		marginTop:'-3%',
+		marginRight:'2%',
 	},
 		divSBLeft:{
 		height:'100%',

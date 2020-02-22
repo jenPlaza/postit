@@ -1,19 +1,16 @@
 // JavaScript Document
-import React, { Component } from 'react'
+import React, {Component} from 'react'
  
-const Search = props =>{
+//const Search = props =>{
+class Search extends Component{
+	render(){
 	return(
-		<li key={this.props.id}>
-		<span>{this.props.val,title}</span>
-		<span>{this.props.val,description}</span>
+		<li key={this.props.id} >
+		<span >{this.props.val.postTitle}</span>
+		<span >{this.props.val.postDescription}</span>
 		</li>
 	)
 }
+}
 
 export default Search
-
-const styles ={
-	search:{
-		border:'1px solid red',
-	}
-}

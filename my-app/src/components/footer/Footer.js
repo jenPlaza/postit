@@ -11,7 +11,7 @@ const Footer = () => {
 	  	<Row>
 		<Col lg={1} style={styles.col}>
 	  		</Col>
-	   		<Col sm={2} lg={1} style={styles.col}>
+	   		<Col xs={2} sm={2} lg={1} style={styles.col}>
 		
 	  			<img src={logo2} alt="Logo2 icon" style={styles.logo2}/>
 		

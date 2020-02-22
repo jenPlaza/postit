@@ -1,6 +1,7 @@
 // JavaScript Document
-import React from 'react'
-import {GoSearch} from 'react-icons/go'
+import React, {Component} from 'react'
+
+import {GoSearch} from 'react-icons/go';
 import {Row, Col } from 'react-grid-system';
 
 const Nav = () => {
@@ -14,12 +15,12 @@ const Nav = () => {
 		  			<div>
 		 				<input placeholder="Search.." style={styles.searchBox}/>
 		  				<GoSearch/>
-		  			</div>
+		  </div>
 		  		</form>
 		 		</Col>
 			</Row>
 		  </nav>
-)
+);
 }
 
   export default Nav; 
