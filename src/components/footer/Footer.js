@@ -1,6 +1,5 @@
 // JavaScript Document
 import React from 'react'
-import './Footer.css'
 import logo2 from '../../images/ptBtn3.png'
 import { Row, Col } from 'react-grid-system'
 import {MdCopyright} from 'react-icons/md'
@@ -12,7 +11,7 @@ const Footer = () => {
 	  	<Row>
 		<Col lg={1} style={styles.col}>
 	  		</Col>
-	   		<Col sm={2} lg={1} style={styles.col}>
+	   		<Col xs={2} sm={2} lg={1} style={styles.col}>
 		
 	  			<img src={logo2} alt="Logo2 icon" style={styles.logo2}/>
 		
@@ -36,10 +35,10 @@ const Footer = () => {
 				<p><a style={styles.a} href='https://reactjs.org'>Code of Contact</a></p>
 	  		</Col>
 	  	</Row>
-		<Row style={styles.row}>
+		<Row>
 		<Col md={11} >
 		<div style={styles.copy}>
-				<p style={styles.p} ><MdCopyright size={14}/><b>2020 Post It.</b></p>
+				<p><MdCopyright size={14}/><b>2020 Post It.</b></p>
 		</div>
 		</Col>
 		</Row>
