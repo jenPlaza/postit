@@ -2,14 +2,21 @@
 import React, {Component} from 'react';
 //import Menu from './Menu';
  
-class Pg1 extends Component{
+class Watch extends Component{
 	render(){
 	return(
 		<section className="" >
-		Link1
+		<h1 style={styles.h1}>Watch</h1>
 		</section>
 		);
 	}
 }
 
-export default Pg1
+export default Watch
+
+const styles ={
+		h1:{
+		fontSize:'3em',
+		marginTop:'-0.5%',
+	}
+}

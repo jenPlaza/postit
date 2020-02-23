@@ -1,6 +1,6 @@
 // JavaScript Document
 import React from 'react';
-import Button from '../buttons/Button';
+import Button from '../buttons/Button'
 
 const MyForm = props =>{
     return (
@@ -9,9 +9,9 @@ const MyForm = props =>{
 
 		<h1> Create A Post</h1>
 		<input type='text' style={styles.input} name='postTitle' value={props.postTitle} onChange={props.titleBind} placeholder="Title" required/>
-		<p style={styles.p}>New Item: {props.titleInput}</p>
+		<p style={styles.p}>New Item:{props.titleInput}</p>
 		<input type='text' style={styles.input} name='postDescription' value={props.postDescription} onChange={props.descriptionBind} placeholder="Description" required/>
-		<p style={styles.p}>New Item: {props.descriptionInput}</p>
+		<p style={styles.p}>New Item:{props.descriptionInput}</p>
 		<Button type='submit' btnText='Post'/>
       </form>
 		</div>
@@ -39,5 +39,5 @@ const styles ={
 	p:{
 		textAlign:'left',
 		margin:'3%',
-	},
+	}
 }

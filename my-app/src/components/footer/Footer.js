@@ -9,21 +9,21 @@ import {MdCopyright} from 'react-icons/md';
 //React Router
 import {NavLink} from 'react-router-dom';
 
-import FaHome from 'react-icons/lib/ti/home-outline';
-import AddLoc from 'react-icons/lib/md/add-location';
-import MyFerry from 'react-icons/lib/md/directions-ferry';
-import Map from 'react-icons/lib/md/map';
+import { TiHomeOutline } from "react-icons/ti";
+import { MdAddLocation } from "react-icons/md";
+import { MdDirectionsBoat } from "react-icons/md";
+import { MdMap } from "react-icons/md";
 
-
-const Footer = () => {
+class Footer extends React.Component {
+	render(){
 	return(
 		<footer className="content footer" style={styles.container}>
 			<Row>
 				<Col sm={11} >
-					<NavLink to='/Pg1'><FaHome /></NavLink>
-		  			<NavLink to='/Pg2'><AddLoc /></NavLink>
-		  			<NavLink to='/Pg3'><MyFerry /></NavLink>
-					<NavLink to='/Pg3'><Map /></NavLink>
+					<NavLink to='/Pg1'><TiHomeOutline /></NavLink>
+		  			<NavLink to='/Pg2'><MdAddLocation /></NavLink>
+		  			<NavLink to='/Pg3'><MdDirectionsBoat /></NavLink>
+					<NavLink to='/Pg3'><MdMap /></NavLink>
 				</Col>
 			</Row>
 	  		<Row>
@@ -59,7 +59,8 @@ const Footer = () => {
 				</Col>
 			</Row>
 		</footer>
-	);
+		);
+	}
 }
 export default Footer
 
@@ -77,7 +78,7 @@ const styles ={
 		marginLeft:'1%',
 	},
 	h2:{
-		fontsize:'1.25em',
+		fontSize:'1.25em',
 		marginTop:'-0.5%',
 	},
 	logo2:{

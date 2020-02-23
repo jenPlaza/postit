@@ -89,21 +89,21 @@ if(localStorage.getItem('postListing')){
 	  <Router>
 	  	<div style={styles.container}>
 	  		<Row style={styles.headerRow}>
-	  			<Col sm={12} >
-	  				<Header />
-	  			</Col>
-	  			<Col sm={12} >
+	  			<Col xs={12} >
 	  				<div style={styles.avatar}>
 		  				<FaUserCircle style={styles.faUserCircle} size={38}/>
 		  				<p md={2} style={styles.p}>Log In</p>	
 		  			</div>
 	  			</Col>
-	  		</Row>
-	  		<Row style={styles.searchRow}>
-	  			<Col xs={12} md={3} lg={2}style={styles.logo}>
-	  				<img src={logo} alt="Logo icon"/>
+	  			<Col xs={12} >
+	  				<Header />
 	  			</Col>
-	  			<Col xs={12} md={9} lg={9}>
+	  		</Row>
+	  			<Row style={styles.searchRow}>
+	  			<Col xs={10} md={6} lg={2} style={styles.logo}>
+	  				<img style={styles.logo} src={logo} alt="Logo icon"/>
+	  			</Col>
+	  			<Col xs={12} md={6} lg={10}>
 	  				<form style={styles.search}>	
 	  					<SearchInput placeholder="Search..." searchInfo={this.searchInfo} />
 	  					<GoSearch style={styles.goS}/>
@@ -160,11 +160,11 @@ const styles ={
 	searchRow:{
 	padding:'2%',
 	backgroundColor:'white',
-	justifyContent:'center',											  
+	justifyContent:'center',
 	},
 	bodyRow:{
-		marginTop:'8%',
-		marginBottom:'8%',
+		marginTop:'2%',
+		marginBottom:'2%',
 		paddingTop:'2%',
 		paddingBottom:'3%',
 		textAlign:'center',
@@ -172,7 +172,13 @@ const styles ={
 		border:'3px solid rgba(24, 8, 0)',
 	},
 	mainRow:{
-	border:'1px solid red',
+		marginTop:'3%',
+		marginBottom:'3%',
+		paddingTop:'2%',
+		paddingBottom:'3%',
+		textAlign:'center',
+		backgroundColor:'rgba(24, 8, 0, 0.4)',
+		border:'3px solid rgba(24, 8, 0)',
 	},
 	footerRow:{
 		backgroundColor:'white',							
@@ -183,12 +189,11 @@ const styles ={
 	},
 	logo:{
 		float:'left',
-		marginTop:'-8%',									  
-		height:'140px',
+		marginTop:'0%',									  
 	},
 	avatar:{
 		float:'right',
-		marginRight:'8%',
+		marginRight:'3%',
 	},
 	p:{
 		display:'none',									
@@ -196,7 +201,7 @@ const styles ={
 	search:{
 		height:'32px',
 		backgroundColor:'rgba(231, 231, 231, 0.8)',
-		marginTop:'8%',
+		marginTop:'13%',
 	},
 	searchL:{
 	color:'grey',
