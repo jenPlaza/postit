@@ -1,21 +1,30 @@
 import React from 'react';
 import './App.css';
-/*import Header from './components/header/Header'*/
-import Footer from './components/footer/Footer'
-import MyForm from './components/myForm/MyForm'
-import SideBarLeft from './components/sidebarleft/SideBarLeft'
-import SideBarRight from './components/sidebarright/SideBarRight'
+import Header from './components/header/Header';
+import Main from './components/main/Main';
+import Footer from './components/footer/Footer';
 
-import ListItem from './components/listitems/ListItems'
+//Main
+import MyForm from './components/myForm/MyForm';
+import SideBarLeft from './components/sidebarleft/SideBarLeft';
+import SideBarRight from './components/sidebarright/SideBarRight';
+import ListItem from './components/listitems/ListItems';
+import SearchInput from './components/search/SearchInput';
+import Search from './components/search/Search';
 
-import SearchInput from './components/search/SearchInput'
-import Search from './components/search/Search'
-
-import logo from '../src/images/postIt.png'
-import imgUrl from '../src/images/postBkg.jpg'
-import {FaUserCircle} from 'react-icons/fa'
+//Images & Icons
+import logo from '../src/images/postIt.png';
+import imgUrl from '../src/images/postBkg.jpg';
+import {FaUserCircle} from 'react-icons/fa';
 import {GoSearch} from 'react-icons/go';
 import { Row, Col } from 'react-grid-system';
+
+//React Router
+import{
+	BrowserRouter as Router,
+	Route,
+	Link
+}from 'react-router-dom'
 
 function searchMe(search){
 	return function(searchTitle){
@@ -36,20 +45,18 @@ class App extends React.Component {
 	// this.handleSubmit = this.handleSubmit.bind(this); 
 	// }
 
-componentDidMount(){
+	componentDidMount(){
 if(localStorage.getItem('postListing')){
 		let postL = JSON.parse(localStorage.getItem('postListing'))
 		this.setState({postListing:postL})
 	}
 }
-
-handleSubmit = e => {
+	handleSubmit = e => {
 	e.preventDefault();
 	let postL = [...this.state.postListing, {postTitle:this.state.titleInput, postDescription:this.state.descriptionInput}]
 	localStorage.setItem('postListing', JSON.stringify(postL))
 	e.target.reset()
   }
-
 	removeItem = key => {
 		let postL = this.state.postListing
 			this.state.postListing.splice(key,1)
@@ -66,11 +73,9 @@ handleSubmit = e => {
 	descriptionBind = e => {
 		this.setState({descriptionInput: e.target.value})
 	}
-	
 	searchInfo = e =>{
 	this.setState({search: e.target.value})
-}
-	
+}	
 	render() { 
 		const{search} = this.state
 		let searchlist = this.state.postListing.filter(searchMe(search)).map((element,i) => {
@@ -81,63 +86,60 @@ handleSubmit = e => {
 		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
 	  })
   return (
-	  <div style={styles.container}>
-	  	<Row style={styles.headerRow}>
-	  <Col sm={12} >
-	  			<div style={styles.avatar}>
-		  		<FaUserCircle style={styles.faUserCircle} size={38}/>
-		  		<p md={2} style={styles.p}>Log In</p>	
-		  		</div>
-	  		</Col>
-	  </Row>
-	  <Row style={styles.searchRow}>
-	   		<Col xs={12} md={3} lg={2}style={styles.logo}>
-	  			<img src={logo} alt="Logo icon"/>
-	  		</Col>
-	  		<Col xs={12} md={9} lg={9}>
-		  		<form style={styles.search}>	
-	  <SearchInput placeholder="Search..." searchInfo={this.searchInfo} />
-	  <GoSearch style={styles.goS}/>
-	  <ul style={styles.searchL}>
-	  {searchlist}
-	  </ul>
-		  		</form>
-	  		</Col>
-	  	</Row>
-	  
-	    <Row style={styles.bodyRow}>
-    		<Col sm={12} lg={3} style={styles.col}>
-	  			<div style={styles.divSBLeft}>
-				<SideBarLeft />
-	  			</div>
-	  		</Col>
-	  		<Col sm={12} lg={5} style={styles.col}>
-	  			<div style={styles.divform}>
-	  			<MyForm style={styles.divform}
-	  			titleBind={this.titleBind}
-	  			titleInput={this.state.titleInput}
-
-	  			descriptionBind={this.descriptionBind}
-	  			descriptionInput={this.state.descriptionInput}
-	  
-	  			handleSubmit={this.handleSubmit}
-	  			 />
-	  
-	  			{list}
-	  			</div>
-	  		</Col>
-	  		<Col sm={12} lg={4} style={styles.col}>
-	  			<div style={styles.divSBRight}>
-    			<SideBarRight/>
-	  		</div>
-	  		</Col>
-	  	</Row>
-	  
-	   	<Row style={styles.footerRow}>
-    		<Footer/>
-	  	</Row>
-	 </div> 
-  );
+	  <Router>
+	  	<div style={styles.container}>
+	  		<Row style={styles.headerRow}>
+	  			<Col sm={12} >
+	  				<Header />
+	  			</Col>
+	  			<Col sm={12} >
+	  				<div style={styles.avatar}>
+		  				<FaUserCircle style={styles.faUserCircle} size={38}/>
+		  				<p md={2} style={styles.p}>Log In</p>	
+		  			</div>
+	  			</Col>
+	  		</Row>
+	  		<Row style={styles.searchRow}>
+	  			<Col xs={12} md={3} lg={2}style={styles.logo}>
+	  				<img src={logo} alt="Logo icon"/>
+	  			</Col>
+	  			<Col xs={12} md={9} lg={9}>
+	  				<form style={styles.search}>	
+	  					<SearchInput placeholder="Search..." searchInfo={this.searchInfo} />
+	  					<GoSearch style={styles.goS}/>
+	  					<ul style={styles.searchL}>
+	  						{searchlist}
+	  					</ul>
+	  				</form>
+	  			</Col>
+	  		</Row>
+	    	<Row style={styles.bodyRow}>
+    			<Col sm={12} lg={3} style={styles.col}>
+	  				<div style={styles.divSBLeft}>
+						<SideBarLeft />
+	  				</div>
+	  			</Col>
+	  			<Col sm={12} lg={5} style={styles.col}>
+	  				<div style={styles.divform}>
+	  					<MyForm style={styles.divform} titleBind={this.titleBind} titleInput={this.state.titleInput} descriptionBind={this.descriptionBind} descriptionInput={this.state.descriptionInput} handleSubmit={this.handleSubmit} />
+	  					{list}
+	  				</div>
+	  			</Col>
+	  			<Col sm={12} lg={4} style={styles.col}>
+	  				<div style={styles.divSBRight}>
+    					<SideBarRight/>
+	  				</div>
+	  			</Col>
+	  		</Row>
+	  		<Row style={styles.mainRow}>
+    			<Main/>
+	  		</Row>
+	   		<Row style={styles.footerRow}>
+    			<Footer/>
+	  		</Row>
+	 	</div>
+	</Router>
+  	);
   }
 }
 
@@ -169,6 +171,9 @@ const styles ={
 		backgroundColor:'rgba(24, 8, 0, 0.4)',
 		border:'3px solid rgba(24, 8, 0)',
 	},
+	mainRow:{
+	border:'1px solid red',
+	},
 	footerRow:{
 		backgroundColor:'white',							
 	},							
@@ -196,6 +201,7 @@ const styles ={
 	searchL:{
 	color:'grey',
 	listStyleType:'none',
+	marginTop:'3%',
 	},
 	goS:{
 		float:'right',

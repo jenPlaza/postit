@@ -1,39 +1,35 @@
 // JavaScript Document
-import React, {Component} from 'react'
-
+import React, {Component} from 'react';
 import {GoSearch} from 'react-icons/go';
 import {Row, Col } from 'react-grid-system';
 
+//React Router
+import {NavLink} from 'react-router-dom';
+//pages
+import Pg1 from '../pages/Pg1'
+import Pg2 from '../pages/Pg2'
+import Pg3 from '../pages/Pg3'
+
 const Nav = () => {
       return (
-		  <nav>
+		  <nav style={styles.container}>
 		  	<Row>
-		  <Col md={0}>
-		  </Col>
-				<Col md={12}>
-		  		<form style={styles.search}>
-		  			<div>
-		 				<input placeholder="Search.." style={styles.searchBox}/>
-		  				<GoSearch/>
-		  </div>
-		  		</form>
-		 		</Col>
+		  		<Col sm={12} >
+		  				<NavLink to='/Pg1'>Link 1</NavLink>
+		  				<NavLink to='/Pg2'>Link 2</NavLink>
+		  				<NavLink to='/Pg3'>Link 3</NavLink>
+		  		</Col>
 			</Row>
 		  </nav>
-);
+	  );
 }
 
   export default Nav; 
 
 const styles ={
-	search:{
-		height:'32px',
-		backgroundColor:'rgba(231, 231, 231, 0.5)',
-	},
-	searchBox:{
-		border:'none',
-		width:'95%',
-		height:'30px',
-		backgroundColor:'rgba(231, 231, 231, 0.4)',
-	},
+		container:{
+		width:'100%',
+		padding:'2%',
+		border:'1px solid red',
+	}
 }

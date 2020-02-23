@@ -1,6 +1,6 @@
 // JavaScript Document
 import React from 'react';
-import Button from '../buttons/Button'
+import Button from '../buttons/Button';
 
 const MyForm = props =>{
     return (
