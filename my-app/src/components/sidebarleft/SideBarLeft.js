@@ -4,10 +4,7 @@ import { Container, Row, Col } from 'react-grid-system';
 
 //React Router
 import {NavLink} from 'react-router-dom';
-//pages
-import NewsFeed from '../../pages/NewsFeed';
-import Messages from '../../pages/Messages';
-import Watch from '../../pages/Watch';
+
 
 class SideBarLeft extends React.Component {
   render() {

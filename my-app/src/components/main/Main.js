@@ -1,11 +1,8 @@
-import React, {Component} from 'react';
-import { Row, Col } from 'react-grid-system';
+import React from 'react';
 
 //React Router
 import{
-	BrowserRouter as Router,
 	Route,
-	Link
 }from 'react-router-dom'
 
 //pages

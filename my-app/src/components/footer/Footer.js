@@ -6,26 +6,10 @@ import { Row, Col } from 'react-grid-system';
 import logo2 from '../../images/ptBtn3.png';
 import {MdCopyright} from 'react-icons/md';
 
-//React Router
-import {NavLink} from 'react-router-dom';
-
-import { TiHomeOutline } from "react-icons/ti";
-import { MdAddLocation } from "react-icons/md";
-import { MdDirectionsBoat } from "react-icons/md";
-import { MdMap } from "react-icons/md";
-
 class Footer extends React.Component {
 	render(){
 	return(
 		<footer className="content footer" style={styles.container}>
-			<Row>
-				<Col sm={11} >
-					<NavLink to='/Pg1'><TiHomeOutline /></NavLink>
-		  			<NavLink to='/Pg2'><MdAddLocation /></NavLink>
-		  			<NavLink to='/Pg3'><MdDirectionsBoat /></NavLink>
-					<NavLink to='/Pg3'><MdMap /></NavLink>
-				</Col>
-			</Row>
 	  		<Row>
 				<Col lg={1} style={styles.col}>
 	  			</Col>

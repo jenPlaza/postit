@@ -1,13 +1,9 @@
 // JavaScript Document
-import React, {Component} from 'react';
+import React from 'react';
 import {Row, Col } from 'react-grid-system';
 
 //React Router
 import {NavLink} from 'react-router-dom';
-//pages
-import NewsFeed from '../../pages/NewsFeed';
-import Messages from '../../pages/Messages';
-import Watch from '../../pages/Watch';
 
 class Nav extends React.Component {
 	render(){

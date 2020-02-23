@@ -21,9 +21,7 @@ import { Row, Col } from 'react-grid-system';
 
 //React Router
 import{
-	BrowserRouter as Router,
-	Route,
-	Link
+	BrowserRouter as Router
 }from 'react-router-dom'
 
 function searchMe(search){
