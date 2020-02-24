@@ -23,10 +23,9 @@ import{
 	BrowserRouter as Router
 }from 'react-router-dom'
 
-function searchMe(search){
+function searchFor(search){
 	return function(searchTitle){
 		return searchTitle.postTitle.toLowerCase().includes(search.toLowerCase()) || !search
-		//return searchTitle.titleInput.includes(search) || !search
 	}
 }
 
@@ -37,11 +36,6 @@ class App extends React.Component {
 		postListing: [],
 		search:'',
 	}
-
-	//This is old.  Use an arrow function. Please watch my videos also. I will have the latest code.
-	// this.handleSubmit = this.handleSubmit.bind(this); 
-	// }
-
 	componentDidMount(){
 if(localStorage.getItem('postListing')){
 		let postL = JSON.parse(localStorage.getItem('postListing'))
@@ -54,7 +48,6 @@ if(localStorage.getItem('postListing')){
 	localStorage.setItem('postListing', JSON.stringify(postL))
 	e.target.reset()
   }
-
 
 	//Make this global. You can write a function that will take the value based off the name attribute.
 	//Try to fix this for week 3
@@ -70,7 +63,7 @@ if(localStorage.getItem('postListing')){
 }	
 	render() { 
 		const{search} = this.state
-		let searchlist = this.state.postListing.filter(searchMe(search)).map((element,i) => {
+		let searchlist = this.state.postListing.filter(searchFor(search)).map((element,i) => {
 			  return <Search key={i} val={element}/>
 	  })
 	  
