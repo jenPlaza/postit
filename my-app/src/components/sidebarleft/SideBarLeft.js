@@ -33,5 +33,6 @@ const styles ={
 		paddingBottom:'3%',
 		color:'white',
 		textDecoration:'none',
+		textAlign:'left',
 	}
 }

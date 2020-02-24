@@ -14,7 +14,6 @@ import Search from './components/search/Search';
 //Images & Icons
 import logo from '../src/images/postIt.png';
 import imgUrl from '../src/images/postBkg.jpg';
-import {FaUserCircle} from 'react-icons/fa';
 import {GoSearch} from 'react-icons/go';
 import { Row, Col } from 'react-grid-system';
 
@@ -36,6 +35,7 @@ class App extends React.Component {
 		postListing: [],
 		search:'',
 	}
+
 	componentDidMount(){
 if(localStorage.getItem('postListing')){
 		let postL = JSON.parse(localStorage.getItem('postListing'))
@@ -72,12 +72,6 @@ if(localStorage.getItem('postListing')){
 	  	<div style={styles.container}>
 	  		<Row style={styles.headerRow}>
 	  			<Col xs={12} >
-	  				<div style={styles.avatar}>
-		  				<FaUserCircle style={styles.faUserCircle} size={38}/>
-		  				<p md={2} style={styles.p}>Log In</p>	
-		  			</div>
-	  			</Col>
-	  			<Col xs={12} >
 	  				<Header />
 	  			</Col>
 	  		</Row>
@@ -96,25 +90,26 @@ if(localStorage.getItem('postListing')){
 	  			</Col>
 	  		</Row>
 	    	<Row style={styles.bodyRow}>
-    			<Col sm={12} lg={3} style={styles.col}>
+    			<Col sm={12} lg={2} style={styles.col}>
 	  				<div style={styles.divSBLeft}>
-						<SideBarLeft />
+	  				<SideBarLeft />
 	  				</div>
 	  			</Col>
-	  			<Col sm={12} lg={5} style={styles.col}>
+	  			<Col sm={12} lg={7} style={styles.col} >
 	  				<div style={styles.divform}>
 	  					<MyForm style={styles.divform} titleBind={this.titleBind} titleInput={this.state.titleInput} descriptionBind={this.descriptionBind} descriptionInput={this.state.descriptionInput} handleSubmit={this.handleSubmit} />
 	  				</div>
+	  				<div>
+	  					<Main/>
+	  				</div>
 	  			</Col>
-	  			<Col sm={12} lg={4} style={styles.col}>
+	  			<Col sm={12} lg={3} style={styles.col}>
 	  				<div style={styles.divSBRight}>
-    					<SideBarRight/>
+	  				<SideBarRight/>
 	  				</div>
 	  			</Col>
 	  		</Row>
-	  		<Row style={styles.mainRow}>
-    			<Main/>
-	  		</Row>
+
 	   		<Row style={styles.footerRow}>
     			<Footer/>
 	  		</Row>
@@ -135,7 +130,7 @@ const styles ={
 	headerRow:{
 		padding:'2%',
 		backgroundColor:'white',
-		margin:'0',
+		marginTop:'0',
 		width:'100%',
 	},
 	searchRow:{
@@ -146,8 +141,8 @@ const styles ={
 	justifyContent:'center',
 	},
 	bodyRow:{
-		marginTop:'3%',
-		marginBottom:'2%',
+		marginTop:'5%',
+		marginBottom:'3%',
 		paddingTop:'2%',
 		paddingBottom:'3%',
 		textAlign:'center',
@@ -168,7 +163,7 @@ const styles ={
 	},							
 	col:{						
 		height:'auto',
-		padding:'2%',								
+		padding:'1%',								
 	},
 	logo:{
 		float:'left',
@@ -202,7 +197,7 @@ const styles ={
 		borderRadius:'5px', 
 	},
 		divform:{
-		height:'100%',
+		height:'auto',
 		backgroundColor:'rgba(135, 135, 135, 0.6)',
 	},
 		divSBRight:{

@@ -13,10 +13,10 @@ import Watch from '../../pages/Watch'
 class Main extends React.Component {
 	render(){
 	return(
-		<section className="content main-content" style={styles.container}>
-		  	<Route exact path='/NewsFeed' component={NewsFeed} style={styles.page}/>
-		  	<Route exact path='/Messages' component={Messages} style={styles.page}/>
-		  	<Route exact path='/Watch' component={Watch} style={styles.page}/>
+		<section style={styles.container}>
+		  	<Route exact path='/NewsFeed' component={NewsFeed}/>
+		  	<Route exact path='/Messages' component={Messages}/>
+		  	<Route exact path='/Watch' component={Watch}/>
 		</section>
 		);
 	}

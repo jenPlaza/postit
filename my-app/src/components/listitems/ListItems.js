@@ -4,9 +4,7 @@ import {MdDelete} from 'react-icons/md'
 
 class ListItem extends React.Component {
 	state ={
-		postListing: [
-
-		]
+		postListing: []
 	}
 
 	removeItem = key => {
@@ -41,17 +39,12 @@ class ListItem extends React.Component {
 			)
 		})
 		this.setState({post:pList});
-		console.log("state", this.state.post);
+		//console.log("state", this.state.post);
 	})
 }
 	 render() { 
-			const{isLoading, postListing}= this.state;
-		
   return (
-	
-		<div>{this.state.post}</div>
-	  
-	  			
+		<div>{this.state.post}</div>			
   	);
   }
 }
@@ -60,9 +53,9 @@ export default ListItem
 
 const styles ={
 	list:{
-		width:'98%',
+		width:'100%',
 		height:'auto',
-		padding:'2%',
+		padding:'4%',
 		listStyleType:'none',
 		marginTop:'3%',
 		marginLeft:'1%',

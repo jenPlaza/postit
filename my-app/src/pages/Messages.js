@@ -24,8 +24,7 @@ class Messages extends React.Component {
 		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
 	  })
   return (
-	    	<Row style={styles.container}>
-               
+	    	<Row  style={styles.container}>
 	  			<Col sm={12} style={styles.col}>
 					{list}
 	  			</Col>
@@ -38,18 +37,7 @@ export default Messages
 
 const styles ={
 		container:{
-		padding:'3%',
-		marginLeft:'4%'
-		},
-		h1:{
-		fontSize:'3em',
-		marginTop:'-0.5%',
-		color:'#ea7a0f',
-	},
-	col:{
-		paddingRight:'4.5%',
-		paddinLeft:'4%',
-		backgroundColor:'rgba(135, 135, 135, 0.6)',
-		borderRadius:'5px',
-	}																		 
+		marginLeft:'-7%',
+		marginRight:'-3%',
+		},																		 
 }

@@ -14,6 +14,7 @@ class Nav extends React.Component {
 		  				<NavLink style={styles.nav} to="/NewsFeed">News Feed</NavLink>
 		  				<NavLink style={styles.nav} to="/Messages">Messages</NavLink>
 		  				<NavLink style={styles.nav} to="/Watch">Watch</NavLink>
+		  				
 		  		</Col>
 			</Row>
 		  </nav>
@@ -27,7 +28,7 @@ const styles ={
 		container:{
 		width:'95%',
 		padding:'2%',
-		marginTop:'-5%',
+		marginTop:'0%',
 	},
 	nav:{
 		paddingRight:'4%',
@@ -35,4 +36,9 @@ const styles ={
 		color:'#ea7a0f',
 		fontSize:'1.25em',
 	},
+	faUserCircle:{
+		float:'right',
+		color:'black',
+	},
+	
 }
