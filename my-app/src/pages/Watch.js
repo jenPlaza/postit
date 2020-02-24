@@ -18,5 +18,6 @@ const styles ={
 		h1:{
 		fontSize:'3em',
 		marginTop:'-0.5%',
+		color:'#ea7a0f',	
 	}
 }

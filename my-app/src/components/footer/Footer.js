@@ -70,11 +70,12 @@ const styles ={
 	},
 	a:{
 		color:'grey',
+		textDecoration:'none',
 	},
 	copy:{
 		fontSize:'0.80em',
 		backgroundColor:'white',
 		marginLeft:'1%',
-		
+		color:'#ea7a0f',
 	},
 }

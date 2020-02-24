@@ -30,8 +30,9 @@ const styles ={
 		marginTop:'-5%',
 	},
 	nav:{
-		paddingRight:'1%',
+		paddingRight:'4%',
 		textDecoration:'none',
 		color:'#ea7a0f',
+		fontSize:'1.25em',
 	},
 }

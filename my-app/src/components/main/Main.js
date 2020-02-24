@@ -28,6 +28,5 @@ const styles ={
 		width:'90%',
 		padding:'2%',
 		textAlign:'center',
-		color:'#ea7a0f',
 	},
 }

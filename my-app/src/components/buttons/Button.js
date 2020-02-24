@@ -14,12 +14,12 @@ export default MyBtn
 const styles ={
 	button:{
 		padding:'2%',
-		color:'white',
+		color:'#ea7a0f',
 		margin:'1%',
 		fontSize:'1em',
 		fontWeight:'bold',
 		borderRadius:'50px',
-		backgroundColor:'#ea7a0f',
+		backgroundColor:'white',
 		border:'none',
 		marginBottom:'5%',
 	}

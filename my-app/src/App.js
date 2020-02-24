@@ -8,7 +8,6 @@ import Footer from './components/footer/Footer';
 import MyForm from './components/myForm/MyForm';
 import SideBarLeft from './components/sidebarleft/SideBarLeft';
 import SideBarRight from './components/sidebarright/SideBarRight';
-import ListItem from './components/listitems/ListItems';
 import SearchInput from './components/search/SearchInput';
 import Search from './components/search/Search';
 
@@ -55,12 +54,7 @@ if(localStorage.getItem('postListing')){
 	localStorage.setItem('postListing', JSON.stringify(postL))
 	e.target.reset()
   }
-	removeItem = key => {
-		let postL = this.state.postListing
-			this.state.postListing.splice(key,1)
-		this.setState({postListing: this.state.postListing})
-		localStorage.setItem('postListing', JSON.stringify(postL))
-	}
+
 
 	//Make this global. You can write a function that will take the value based off the name attribute.
 	//Try to fix this for week 3
@@ -80,9 +74,6 @@ if(localStorage.getItem('postListing')){
 			  return <Search key={i} val={element}/>
 	  })
 	  
-			let list = this.state.postListing.map((element,i) => {
-		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
-	  })
   return (
 	  <Router>
 	  	<div style={styles.container}>
@@ -120,7 +111,6 @@ if(localStorage.getItem('postListing')){
 	  			<Col sm={12} lg={5} style={styles.col}>
 	  				<div style={styles.divform}>
 	  					<MyForm style={styles.divform} titleBind={this.titleBind} titleInput={this.state.titleInput} descriptionBind={this.descriptionBind} descriptionInput={this.state.descriptionInput} handleSubmit={this.handleSubmit} />
-	  					{list}
 	  				</div>
 	  			</Col>
 	  			<Col sm={12} lg={4} style={styles.col}>
@@ -156,12 +146,14 @@ const styles ={
 		width:'100%',
 	},
 	searchRow:{
-	padding:'2%',
+	paddingLeft:'2%',
+	paddingRight:'2%',
+	paddingBottom:'2%',											  
 	backgroundColor:'white',
 	justifyContent:'center',
 	},
 	bodyRow:{
-		marginTop:'2%',
+		marginTop:'3%',
 		marginBottom:'2%',
 		paddingTop:'2%',
 		paddingBottom:'3%',

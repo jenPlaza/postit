@@ -5,13 +5,12 @@ import { Container, Row, Col } from 'react-grid-system';
 //React Router
 import {NavLink} from 'react-router-dom';
 
-
 class SideBarLeft extends React.Component {
   render() {
     return (
       <Container style={styles.btn}>
 		<Row>
-			<Col md={12} style={styles.col}>
+			<Col md={12}>
 				<NavLink style={styles.btn} to="/NewsFeed">News Feed</NavLink>
 		  		<NavLink style={styles.btn} to="/Messages">Messages</NavLink>
 		  		<NavLink style={styles.btn} to="/Watch">Watch</NavLink>
@@ -26,7 +25,7 @@ export default SideBarLeft;
 
 const styles ={
 	btn:{
-	display:'block',
+		display:'block',
 		backgroundColor:'rgba(135, 135, 135, 0)',
 		border:'none',
 		fontSize:'1.3em',
