@@ -1,11 +1,12 @@
 // JavaScript Document
-import React, {Component} from 'react';
+import React from 'react';
 import { Row, Col } from 'react-grid-system';
 
 //Images & Icons
 import Pic from './../images/wonderlaneBoiz.jpg';
- 
-class Account extends Component{
+
+//Smart Component
+class Account extends React.Component {
 		state ={
 		accountListing: []
 	}

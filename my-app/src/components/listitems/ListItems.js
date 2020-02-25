@@ -2,6 +2,7 @@ import React from 'react';
 import {FaEdit} from 'react-icons/fa'
 import {MdDelete} from 'react-icons/md'
 
+//Smart Component
 class ListItem extends React.Component {
 	state ={
 		postListing: []

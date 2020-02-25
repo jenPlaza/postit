@@ -1,5 +1,4 @@
 import React from 'react';
-
 //React Router
 import{
 	Route,
@@ -10,6 +9,7 @@ import NewsFeed from '../../pages/NewsFeed'
 import Messages from '../../pages/Messages'
 import Watch from '../../pages/Watch'
 
+//Smart Component
 class Main extends React.Component {
 	render(){
 	return(

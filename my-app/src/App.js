@@ -15,6 +15,8 @@ import Search from './components/search/Search';
 import logo from '../src/images/postIt.png';
 import imgUrl from '../src/images/postBkg.jpg';
 import {GoSearch} from 'react-icons/go';
+
+//grid system
 import { Row, Col } from 'react-grid-system';
 
 //React Router
@@ -28,7 +30,9 @@ function searchFor(search){
 	}
 }
 
+//Smart Component
 class App extends React.Component {
+	//declaring states
 	state ={
 		titleInput:'',
 		descriptionInput:'',
@@ -36,12 +40,15 @@ class App extends React.Component {
 		search:'',
 	}
 
+	//save in local storage function
 	componentDidMount(){
-if(localStorage.getItem('postListing')){
+		if(localStorage.getItem('postListing')){
 		let postL = JSON.parse(localStorage.getItem('postListing'))
 		this.setState({postListing:postL})
 	}
 }
+
+	//add function
 	handleSubmit = e => {
 	e.preventDefault();
 	let postL = [...this.state.postListing, {postTitle:this.state.titleInput, postDescription:this.state.descriptionInput}]
@@ -49,20 +56,23 @@ if(localStorage.getItem('postListing')){
 	e.target.reset()
   }
 
-	//Make this global. You can write a function that will take the value based off the name attribute.
-	//Try to fix this for week 3
-
+	//Binding function to link real time while typing
 	titleBind = e => {
 		this.setState({titleInput: e.target.value})
 	}
+	
+	//Binding function to link real time while typing
 	descriptionBind = e => {
 		this.setState({descriptionInput: e.target.value})
 	}
+	
+	//function to target search values
 	searchInfo = e =>{
 	this.setState({search: e.target.value})
 }	
 	render() { 
 		const{search} = this.state
+		//loop through postListingArray
 		let searchlist = this.state.postListing.filter(searchFor(search)).map((element,i) => {
 			  return <Search key={i} val={element}/>
 	  })

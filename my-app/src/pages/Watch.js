@@ -1,8 +1,8 @@
 // JavaScript Document
-import React, {Component} from 'react';
-//import Menu from './Menu';
+import React from 'react';
  
-class Watch extends Component{
+//Smart Component
+class Watch extends React.Component {
 	render(){
 	return(
 		<section className="" >

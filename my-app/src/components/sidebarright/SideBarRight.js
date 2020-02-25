@@ -1,8 +1,10 @@
 // JavaScript Document
 import React from 'react'
+//images
 import whyBlog from '../../images/whyBlog.jpeg'
 import socialMedia from '../../images/socialMedia.jpg'
 
+//Smart Component
 class SideBarRight extends React.Component {
   render() {
     return (

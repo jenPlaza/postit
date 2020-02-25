@@ -9,6 +9,7 @@ import{
 	Route,
 }from 'react-router-dom'
 
+//Dummy Component
 const Header = props => {
 	return(
 		<header>

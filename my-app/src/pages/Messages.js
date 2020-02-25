@@ -2,9 +2,10 @@ import React from 'react';
 import ListItem from '../components/listitems/ListItems';
 import { Row, Col } from 'react-grid-system';
 
+//Smart Component
 class Messages extends React.Component {
 	state ={
-		postListing: []
+		postListing: [],
 	}
 
 	removeItem = key => {

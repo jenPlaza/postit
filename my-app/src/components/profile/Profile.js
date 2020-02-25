@@ -1,11 +1,14 @@
 // JavaScript Document
 import React from 'react';
+//grid system
 import {Row, Col } from 'react-grid-system';
+//images
 import {FaUserCircle} from 'react-icons/fa';
 
 //React Router
 import {NavLink} from 'react-router-dom';
 
+//Smart Component
 class Profile extends React.Component {
 	render(){
       return (

@@ -1,10 +1,12 @@
 // JavaScript Document
 import React from 'react';
+//grid system
 import {Row, Col } from 'react-grid-system';
 
 //React Router
 import {NavLink} from 'react-router-dom';
 
+//Smart Component
 class Nav extends React.Component {
 	render(){
       return (

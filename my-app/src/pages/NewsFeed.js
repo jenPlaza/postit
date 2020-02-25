@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Messages from '../pages/Messages';
 import { Row, Col } from 'react-grid-system';
 
-class NewsFeed extends Component{
+//Smart Component
+class NewsFeed extends React.Component {
 	render() { 
 		  return <Messages />
   return (
