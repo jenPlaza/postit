@@ -8,19 +8,19 @@ import {NavLink} from 'react-router-dom';
 
 //Smart Component
 class SideBarLeft extends React.Component {
-  render() {
-    return (
-      <Container style={styles.btn}>
-		<Row>
-			<Col md={12}>
-				<NavLink style={styles.btn} to="/NewsFeed">News Feed</NavLink>
-		  		<NavLink style={styles.btn} to="/Messages">Messages</NavLink>
-		  		<NavLink style={styles.btn} to="/Watch">Watch</NavLink>
-			</Col>
-	  	</Row>
-      </Container>
+	render() {
+		return (
+		<Container style={styles.btn}>
+			<Row>
+				<Col md={12}>
+					<NavLink style={styles.btn} to="/NewsFeed">News Feed</NavLink>
+					<NavLink style={styles.btn} to="/Messages">Messages</NavLink>
+					<NavLink style={styles.btn} to="/Watch">Watch</NavLink>
+				</Col>
+			</Row>
+		</Container>
     );
-  }
+  	}
 }
  
 export default SideBarLeft;
