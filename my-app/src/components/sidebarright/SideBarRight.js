@@ -1,12 +1,14 @@
 // JavaScript Document
 import React from 'react'
+//images
 import whyBlog from '../../images/whyBlog.jpeg'
 import socialMedia from '../../images/socialMedia.jpg'
 
+//Smart Component
 class SideBarRight extends React.Component {
   render() {
     return (
-      <section>
+      <section style={styles.container}>
 		<ul>
 		<li style={styles.li}><button href="#" style={styles.btn}><img src={whyBlog} alt="img of a light bulb with red font" className="App-div" style={styles.img}/></button></li>
 		
@@ -21,9 +23,13 @@ class SideBarRight extends React.Component {
 export default SideBarRight;
 
 const styles ={
+	container:{
+		width:'97%',
+	},
 	li:{
 	display:'block',
 		listStyleType:'none',
+		paddingBottom:'5%',
 },
 		btn:{
 		border:'none',

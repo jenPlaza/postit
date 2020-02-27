@@ -13,14 +13,15 @@ export default MyBtn
 
 const styles ={
 	button:{
-		padding:'2%',
-		color:'grey',
+		padding:'1%',
+		color:'#ea7a0f',
 		margin:'1%',
 		fontSize:'1em',
 		fontWeight:'bold',
 		borderRadius:'50px',
 		backgroundColor:'white',
 		border:'none',
-		marginBottom:'5%',
+		marginBottom:'3%',
+		marginTop:'-1%',
 	}
 }
