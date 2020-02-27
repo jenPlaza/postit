@@ -24,12 +24,13 @@ export default MyForm;
 
 const styles ={
 	myform:{
-
 		backgroundColor:'rgba(135, 135, 135, 0.7)',
 		color:'white',
 		display:'flex',
 		flexDirection:'column',
 		borderRadius:'5px',
+		width:'205%',
+		marginLeft:'-9%',
 	},
 	input:{
 		padding:'1%',
@@ -41,5 +42,5 @@ const styles ={
 		margin:'3%',
 		marginTop:'0%',
 		color:'white',
-	}
+	},
 }

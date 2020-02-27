@@ -24,18 +24,18 @@ class App extends React.Component {
 		<Router>
 			<div style={styles.container}>
 				<Row style={styles.headerRow}>
-					<Col xs={12} >
+					<Col>
 						<Header />
 					</Col>
 				</Row>
 				<Row style={styles.nav}>
-					<Col xs={3} >
+					<Col xs={12} lg={2.5}>
 						<SideBarLeft />
 					</Col>
-					<Col xs={6} >
+					<Col xs={6.4} lg={6}>
 						<Routes />
 					</Col>
-					<Col xs={3} >
+					<Col xs={12} lg={3.5}>
 						<SideBarRight />
 					</Col>	
 				</Row>
@@ -57,19 +57,11 @@ const styles ={
 		overflow:'hidden',
 	},
 	headerRow:{
-		padding:'2%',
+		padding:'3%',
 		backgroundColor:'white',
-		marginTop:'0',
 		width:'100%',
 	},
-	searchRow:{
-	paddingLeft:'2%',
-	paddingRight:'2%',
-	paddingBottom:'2%',											  
-	backgroundColor:'white',
-	justifyContent:'center',
-	},
-	bodyRow:{
+	nav:{
 		marginTop:'5%',
 		marginBottom:'3%',
 		paddingTop:'2%',
@@ -77,61 +69,9 @@ const styles ={
 		textAlign:'center',
 		backgroundColor:'rgba(24, 8, 0, 0.4)',
 		border:'3px solid rgba(24, 8, 0)',
-	},
-	mainRow:{
-		marginTop:'3%',
-		marginBottom:'3%',
-		paddingTop:'2%',
-		paddingBottom:'3%',
-		textAlign:'center',
-		backgroundColor:'rgba(24, 8, 0, 0.4)',
-		border:'3px solid rgba(24, 8, 0)',
+		
 	},
 	footerRow:{
 		backgroundColor:'white',							
 	},							
-	col:{						
-		height:'auto',
-		padding:'1%',								
-	},
-	logo:{
-		float:'left',
-		marginTop:'0%',									  
-	},
-	avatar:{
-		float:'right',
-		marginRight:'3%',
-	},
-	p:{
-		display:'none',									
-	},
-	search:{
-		height:'32px',
-		backgroundColor:'rgba(231, 231, 231, 0.8)',
-		marginTop:'13%',
-	},
-	searchL:{
-	color:'grey',
-	listStyleType:'none',
-	marginTop:'3%',
-	},
-	goS:{
-		float:'right',
-		marginTop:'-3%',
-		marginRight:'2%',
-	},
-		divSBLeft:{
-		height:'100%',
-		border:'3px solid rgba(135, 135, 135)',
-		borderRadius:'5px', 
-	},
-		divform:{
-		height:'auto',
-		backgroundColor:'rgba(135, 135, 135, 0.6)',
-	},
-		divSBRight:{
-		height:'100%',
-		border:'3px solid rgba(135, 135, 135)',
-		borderRadius:'5px',
-	},
 }

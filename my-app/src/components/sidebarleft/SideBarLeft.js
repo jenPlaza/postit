@@ -10,9 +10,9 @@ import {NavLink} from 'react-router-dom';
 class SideBarLeft extends React.Component {
 	render() {
 		return (
-		<Container style={styles.btn}>
+		<Container style={styles.container}>
 			<Row>
-				<Col md={12}>
+				<Col md={12} style={styles.btn}>
 					<NavLink style={styles.btn} to="/NewsFeed">News Feed</NavLink>
 					<NavLink style={styles.btn} to="/Messages">Messages</NavLink>
 					<NavLink style={styles.btn} to="/Watch">Watch</NavLink>
@@ -26,6 +26,9 @@ class SideBarLeft extends React.Component {
 export default SideBarLeft;
 
 const styles ={
+	container:{
+		width:'75%',
+	},
 	btn:{
 		display:'block',
 		backgroundColor:'rgba(135, 135, 135, 0)',
