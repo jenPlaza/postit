@@ -30,7 +30,8 @@ export default Routes
 
 const styles ={
 	container:{
-		paddingRight:'3%',
 		marginTop:'3%',
+		marginLeft:'1%',
+		marginRight:'0.5%',
 	},
 }

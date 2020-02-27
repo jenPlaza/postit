@@ -32,7 +32,7 @@ class App extends React.Component {
 					<Col xs={12} lg={2.5}>
 						<SideBarLeft />
 					</Col>
-					<Col xs={6.4} lg={6}>
+					<Col xs={12} lg={6}>
 						<Routes />
 					</Col>
 					<Col xs={12} lg={3.5}>

@@ -1,35 +1,48 @@
 import React from 'react';
-import ListItem from '../components/listitems/ListItems';
-import { Row, Col } from 'react-grid-system';
+import {FaEdit} from 'react-icons/fa'
+import {MdDelete} from 'react-icons/md'
 
 //Smart Component
 class Messages extends React.Component {
 	state ={
-		postListing: [],
+		messageListing: []
 	}
 
 	removeItem = key => {
-		let postL = this.state.postListing
-			this.state.postListing.splice(key,1)
-		this.setState({postListing: this.state.postListing})
-		localStorage.setItem('postListing', JSON.stringify(postL))
+		let messageL = this.state.messageListing
+			this.state.messageListing.splice(key,1)
+		this.setState({messageListing: this.state.messageListing})
+		localStorage.setItem('messageListing', JSON.stringify(messageL))
 	}
 	componentDidMount(){
-		if(localStorage.getItem('postListing')){
-		let postL = JSON.parse(localStorage.getItem('postListing'))
-		this.setState({postListing:postL})
-	}
+	this.fetchData();
 }
-	render() { 
-			let list = this.state.postListing.map((element,i) => {
-		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
-	  })
+	fetchData(){
+	fetch('https://randomuser.me/api/0.8/?results=10&nat=us')
+		.then(results =>{
+		return results.json();
+	}).then(data =>{
+		let mList = data.results.map((use)=>{
+			return(
+				  <li key={this.props.id} style={styles.list}>
+				<span>
+					<MdDelete style={styles.mdDelete} size={30} onClick={this.props.dlt}/>
+					<FaEdit style={styles.faEdit} size={30}/>
+				</span>
+				<span key={use.results}>
+				<p><b>Username:</b> {use.user.username}<br /><b>Email:</b> {use.user.email}<br/><b>Date:</b> {use.user.registered} - <b>Time:</b>{use.user.dob}<br /><br />{use.user.sha256}</p>
+
+				</span>
+				</li>
+			)
+		})
+		this.setState({message:mList});
+		//console.log("state", this.state.message);
+	})
+}
+	 render() { 
   return (
-	    	<Row  style={styles.container}>
-	  			<Col sm={12} style={styles.col}>
-					{list}
-	  			</Col>
-	  		</Row>
+		<div>{this.state.message}</div>			
   	);
   }
 }
@@ -37,8 +50,25 @@ class Messages extends React.Component {
 export default Messages
 
 const styles ={
-		container:{
-		marginLeft:'-7%',
-		marginRight:'-3%',
-		},																		 
+	list:{
+		width:'100%',
+		height:'auto',
+		padding:'4%',
+		listStyleType:'none',
+		marginTop:'3%',
+		marginLeft:'1%',
+		marginBottom:'3%',
+		background:'#B9B9B9',
+		borderRadius:'3px',
+		textAlign:'left',
+	},
+	items:{
+		marginLeft:'3%',
+	},
+	mdDelete:{
+		float:'right',
+	},
+	faEdit:{
+		float:'right',
+	},
 }

@@ -27,7 +27,9 @@ export default SideBarLeft;
 
 const styles ={
 	container:{
-		width:'75%',
+		width:'90%',
+		height:'100%',
+		marginLeft:'5%',
 	},
 	btn:{
 		display:'block',
