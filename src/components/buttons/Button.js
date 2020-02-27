@@ -1,5 +1,4 @@
 // JavaScript Document
-//import React, {Component} from 'react'
 import React from 'react'
 
 //Dummy Component
@@ -14,11 +13,15 @@ export default MyBtn
 
 const styles ={
 	button:{
-		padding:'2%',
-		color:'rgb(163,173,194)',
+		padding:'1%',
+		color:'#ea7a0f',
 		margin:'1%',
 		fontSize:'1em',
 		fontWeight:'bold',
 		borderRadius:'50px',
+		backgroundColor:'white',
+		border:'none',
+		marginBottom:'3%',
+		marginTop:'-1%',
 	}
 }
