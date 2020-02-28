@@ -1,13 +1,25 @@
 // JavaScript Document
 import React from 'react';
+import YouTube from '../thirdparty/YouTube';
+import { Row, Col } from 'react-grid-system';
  
 //Smart Component
 class Watch extends React.Component {
 	render(){
 	return(
-		<section className="" >
-		<h1 style={styles.h1}>Watch</h1>
-		</section>
+		<div>
+			<Row>
+				<Col xs={12} lg={3} style={styles.video}>
+					<YouTube  videoId='0ujjBmVkYhg' />
+				</Col>
+				<Col xs={12} lg={3} style={styles.video}>
+					<YouTube videoId='sioZd3AxmnE' />
+				</Col>
+				<Col xs={12} lg={3} style={styles.video}>
+					<YouTube videoId='ab3Sy-HnUB0' />
+				</Col>
+			</Row>
+		</div>
 		);
 	}
 }
@@ -15,9 +27,7 @@ class Watch extends React.Component {
 export default Watch
 
 const styles ={
-		h1:{
-		fontSize:'3em',
-		marginTop:'-0.5%',
-		color:'#ea7a0f',	
+		video:{
+			marginRight:'8%',
 	}
 }

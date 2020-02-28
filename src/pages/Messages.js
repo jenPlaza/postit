@@ -51,7 +51,7 @@ export default Messages
 
 const styles ={
 	list:{
-		width:'100%',
+		width:'90%',
 		height:'auto',
 		padding:'4%',
 		listStyleType:'none',
@@ -61,9 +61,7 @@ const styles ={
 		background:'#B9B9B9',
 		borderRadius:'3px',
 		textAlign:'left',
-	},
-	items:{
-		marginLeft:'3%',
+		wordWrap:'break-word',
 	},
 	mdDelete:{
 		float:'right',

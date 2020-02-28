@@ -59,6 +59,7 @@ if(localStorage.getItem('postListing')){
 		let searchlist = this.state.postListing.filter(searchMe(search)).map((element,i) => {
 			  return <Search key={i} val={element}/>
 	  })*/
+	  
 			let list = this.state.postListing.map((element,i) => {
 		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
 	  })
@@ -68,7 +69,7 @@ return (
 				<Col>
 					<div>
 						<MyForm titleBind={this.titleBind} titleInput={this.state.titleInput} descriptionBind={this.descriptionBind} descriptionInput={this.state.descriptionInput} handleSubmit={this.handleSubmit} />
-						{list}
+					{list}
 					</div>
 				</Col>
 				</Row>

@@ -29,7 +29,7 @@ const styles ={
 	li:{
 	display:'block',
 		listStyleType:'none',
-		paddingBottom:'5%',
+		paddingBottom:'10%',
 },
 		btn:{
 		border:'none',
