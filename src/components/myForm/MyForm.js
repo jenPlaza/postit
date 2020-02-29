@@ -1,6 +1,5 @@
 // JavaScript Document
 import React from 'react';
-import ListItem from '../listitems/ListItems';
 import Button from '../buttons/Button'
 
 //Smart Component
@@ -18,19 +17,16 @@ e.target.reset()
   }
 	
   render() {
-	  let list = this.state.postListing.map((element,i) => {
-		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
-	  })
     return (
 		<div>
       	<form style={styles.myform} onSubmit={this.props.handleSubmit}>
 
-		<h2> Create A Post</h2>
+		<h2 style={styles.h2}> Create A Post</h2>
 		<input type='text' style={styles.input} name='postTitle' value={this.props.postTitle} onChange={this.props.titleBind} placeholder="Title" required/>
 		<p style={styles.p}>New Item:{this.props.titleInput}</p>
 		<input type='text' style={styles.input} name='postDescription' value={this.props.postDescription} onChange={this.props.descriptionBind} placeholder="Description" required/>
 		<p style={styles.p}>New Item: {this.props.descriptionInput}</p>
-		<Button type='submit' btnText='Post'/>
+		  <Button type='submit' btnText='Post'/>
       </form>
 		</div>
 		);
@@ -52,6 +48,9 @@ const styles ={
 		padding:'1%',
 		margin:'1%',
 		marginTop:'-1%',
+	},
+	h2:{
+		textAlign:'center',
 	},
 	p:{
 		textAlign:'left',

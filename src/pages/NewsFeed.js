@@ -1,9 +1,10 @@
 import React from 'react';
 import ListItem from '../components/listitems/ListItems';
-
-//grid system
-import { Row, Col } from 'react-grid-system';
 import MyForm from '../components/myForm/MyForm';
+
+//Material UI
+import Grid from '@material-ui/core/Grid';
+
 
 /*function searchMe(search){
 	return function(searchTitle){
@@ -65,15 +66,15 @@ if(localStorage.getItem('postListing')){
 	  })
 return (
 		<div>
-			<Row>
-				<Col>
+			<Grid container>
+				<Grid item xs={12}>
 					<div>
 						<MyForm titleBind={this.titleBind} titleInput={this.state.titleInput} descriptionBind={this.descriptionBind} descriptionInput={this.state.descriptionInput} handleSubmit={this.handleSubmit} />
-					{list}
+						{list}
 					</div>
-				</Col>
-				</Row>
-			</div>
+				</Grid>
+			</Grid>
+		</div>
 		);
 	}
 }

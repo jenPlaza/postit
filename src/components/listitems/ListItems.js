@@ -1,6 +1,8 @@
 import React from 'react';
 import {FaEdit} from 'react-icons/fa'
 import {MdDelete} from 'react-icons/md'
+//Material UI
+import Paper from "@material-ui/core/Paper";
 
 //Smart Component
 class ListItem extends React.Component {
@@ -15,14 +17,15 @@ class ListItem extends React.Component {
 	}
 	 render() { 
   return (
-		<li key={this.props.id} style={styles.list}>
-				<span>
-					<MdDelete style={styles.mdDelete} size={30} onClick={this.props.dlt}/>
-					<FaEdit style={styles.faEdit} size={30}/>
-				</span>
-				<span style={styles.items}><b>{this.props.val.postTitle}</b></span><br />
-				<span style={styles.items}>{this.props.val.postDescription}</span>
-				
+				<li key={this.props.id} style={styles.list}>
+	  			<Paper style={styles.paper} variant="outlined">
+					<span>
+						<MdDelete style={styles.mdDelete} size={30} onClick={this.props.dlt}/>
+						<FaEdit style={styles.faEdit} size={30}/>
+					</span>
+					<span style={styles.items}><b>{this.props.val.postTitle}</b></span><br />
+					<span style={styles.items}>{this.props.val.postDescription}</span>
+					</Paper>
 				</li>			
   	);
   }
@@ -32,14 +35,14 @@ export default ListItem
 
 const styles ={
 	list:{
-		width:'90%',
+		width:'98%',
 		height:'auto',
-		padding:'4%',
+		
 		listStyleType:'none',
-		marginTop:'3%',
-		marginLeft:'1%',
-		marginBottom:'3%',
-		background:'#B9B9B9',
+		padding:'1%',
+		marginTop:'1%',
+		marginBottom:'1%',
+		backgroundColor:'rgba(135, 135, 135, 0.7)',
 		borderRadius:'3px',
 		textAlign:'left',
 	},

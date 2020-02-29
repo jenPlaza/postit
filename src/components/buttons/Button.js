@@ -1,27 +1,26 @@
 // JavaScript Document
 import React from 'react'
+import Button from '@material-ui/core/Button';
 
 //Dummy Component
 const MyBtn = props =>{
 	return(
-	<button style={styles.button}>
-		{props.btnText}
-		</button>
+		 <Button variant="contained" color="textorange" style={styles.btn}>
+        {props.btnText}
+      </Button>
+		
+
 	)
 }
 export default MyBtn
 
 const styles ={
-	button:{
+	btn:{
 		padding:'1%',
 		color:'#ea7a0f',
 		margin:'1%',
 		fontSize:'1em',
 		fontWeight:'bold',
-		borderRadius:'50px',
 		backgroundColor:'white',
-		border:'none',
-		marginBottom:'3%',
-		marginTop:'-1%',
 	}
 }

@@ -9,40 +9,41 @@ import SideBarRight from './components/sidebarright/SideBarRight';
 //Images & Icons
 import imgUrl from '../src/images/postBkg.jpg';
 
-//grid system
-import { Row, Col } from 'react-grid-system';
 //React Router
 import{ BrowserRouter as Router }from 'react-router-dom'
 
+//Material UI
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 //Smart Component
 class App extends React.Component {
-
 	render() { 
-	
 	return (
 		<Router>
-			<div style={styles.container}>
-				<Row style={styles.headerRow}>
-					<Col>
-						<Header />
-					</Col>
-				</Row>
-				<Row style={styles.nav}>
-					<Col xs={12} lg={2.5}>
-						<SideBarLeft />
-					</Col>
-					<Col xs={12} lg={6}>
-						<Routes />
-					</Col>
-					<Col xs={12} lg={3.5}>
-						<SideBarRight />
-					</Col>	
-				</Row>
-				<Row style={styles.footerRow}>
-					<Footer/>
-				</Row>
-			</div>
+		<div style={styles.container}>
+      	<Grid container spacing={0} >
+        <Grid item xs={12} style={styles.headerRow}>
+          <Paper style={styles.paper} variant="outlined"><Header /></Paper>
+        </Grid>
+	  
+		<Grid container spacing={1}>
+         <Grid item xs={6} md={3}>
+        <Paper style={styles.paper} variant="outlined"><SideBarLeft /></Paper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper style={styles.paper} variant="outlined"><Routes /></Paper>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Paper style={styles.paper} variant="outlined"><SideBarRight /></Paper>
+        </Grid>
+		</Grid>
+	  
+	  <Grid item xs={12} style={styles.footerRow}>
+          <Paper style={styles.paper} variant="outlined"><Footer /></Paper>
+        </Grid>
+      </Grid>
+    </div>
 		</Router>
 		);
 	}
@@ -54,24 +55,20 @@ const styles ={
 	container:{
 		backgroundImage: 'url(' + imgUrl + ')',						
 		height:'auto',
+		flexGrow: 1,
 		overflow:'hidden',
 	},
 	headerRow:{
 		padding:'3%',
 		backgroundColor:'white',
-		width:'100%',
 	},
-	nav:{
-		marginTop:'5%',
-		marginBottom:'3%',
-		paddingTop:'2%',
-		paddingBottom:'3%',
-		textAlign:'center',
-		backgroundColor:'rgba(24, 8, 0, 0.4)',
-		border:'3px solid rgba(24, 8, 0)',
-		
+	paper:{
+		backgroundColor: "transparent",
+		border:'none',
 	},
 	footerRow:{
-		backgroundColor:'white',							
-	},							
+		marginTop:'1%',
+		padding:'3%',
+		backgroundColor:'white',
+	},
 }

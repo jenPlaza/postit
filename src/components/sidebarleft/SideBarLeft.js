@@ -1,23 +1,41 @@
 // JavaScript Document
 import React from "react";
-//grid system
-import { Container, Row, Col } from 'react-grid-system';
 
-//React Router
-import {NavLink} from 'react-router-dom';
+//Material UI
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
 
 //Smart Component
 class SideBarLeft extends React.Component {
+Links() {
+  return (
+    <Typography display="block" variant="body" align="left">
+	  <Box component="span" display="block" p={2} m={1} >
+      	<Link color="inherit" href="http://localhost:3000/NewsFeed">News Feed</Link>
+	  	{' '}
+	  </Box>
+	  <Box component="span" display="block" p={2} m={1} >
+	  	<Link color="inherit" href="http://localhost:3000/Messages">Messages</Link>
+	  	{' '}
+	  </Box>
+	  <Box component="span" display="block" p={2} m={1} >
+	  	<Link color="inherit" href="http://localhost:3000/Watch">Watch</Link>
+	  	{' '}
+	   </Box>
+    </Typography>
+  );
+}
 	render() {
 		return (
 		<Container style={styles.container}>
-			<Row>
-				<Col md={12} style={styles.btn}>
-					<NavLink style={styles.btn} to="/NewsFeed">News Feed</NavLink>
-					<NavLink style={styles.btn} to="/Messages">Messages</NavLink>
-					<NavLink style={styles.btn} to="/Watch">Watch</NavLink>
-				</Col>
-			</Row>
+			<Grid container>
+				<Grid item md={12} style={styles.btn}>
+					<this.Links />
+				</Grid>
+			</Grid>
 		</Container>
     );
   	}
@@ -32,14 +50,8 @@ const styles ={
 		marginLeft:'5%',
 	},
 	btn:{
-		display:'block',
-		backgroundColor:'rgba(135, 135, 135, 0)',
-		border:'none',
-		fontSize:'1.3em',
+		fontSize:'1.65em',
 		marginTop:'5%',
-		paddingBottom:'3%',
 		color:'white',
-		textDecoration:'none',
-		textAlign:'left',
 	}
 }
