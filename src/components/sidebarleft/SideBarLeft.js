@@ -1,16 +1,29 @@
 // JavaScript Document
 import React from "react";
+import { makeStyles } from '@material-ui/core/styles';
 
 //Material UI
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
 
-//Smart Component
-class SideBarLeft extends React.Component {
-Links() {
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width:'90%',
+		height:'100%',
+		marginLeft:'5%',
+  },
+	btn:{
+		fontSize:'1.65em',
+		marginTop:'5%',
+		color:'white',
+	}
+}));
+
+const Links = () => {
   return (
     <Typography display="block" variant="body" align="left">
 	  <Box component="span" display="block" p={2} m={1} >
@@ -28,30 +41,17 @@ Links() {
     </Typography>
   );
 }
-	render() {
-		return (
-		<Container style={styles.container}>
+
+
+export default function SideBarLeft() {
+  const classes = useStyles();
+  return (
+		<Container className={classes.root}>
 			<Grid container>
-				<Grid item md={12} style={styles.btn}>
-					<this.Links />
+				<Grid item md={12} className={classes.btn}>
+					<Links />
 				</Grid>
 			</Grid>
 		</Container>
     );
-  	}
-}
- 
-export default SideBarLeft;
-
-const styles ={
-	container:{
-		width:'90%',
-		height:'100%',
-		marginLeft:'5%',
-	},
-	btn:{
-		fontSize:'1.65em',
-		marginTop:'5%',
-		color:'white',
-	}
 }

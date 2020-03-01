@@ -5,11 +5,7 @@ import Button from '@material-ui/core/Button';
 //Dummy Component
 const MyBtn = props =>{
 	return(
-		 <Button variant="contained" color="textorange" style={styles.btn}>
-        {props.btnText}
-      </Button>
-		
-
+		 <Button type='submit' style={styles.btn}>{props.btnText}</Button>
 	)
 }
 export default MyBtn
@@ -17,10 +13,11 @@ export default MyBtn
 const styles ={
 	btn:{
 		padding:'1%',
-		color:'#ea7a0f',
+		backgroundColor:'white',
 		margin:'1%',
 		fontSize:'1em',
 		fontWeight:'bold',
-		backgroundColor:'white',
+		color:'#ea7a0f',
+		border:'3px solid #ea7a0f'
 	}
 }

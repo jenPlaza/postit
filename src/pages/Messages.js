@@ -37,7 +37,6 @@ class Messages extends React.Component {
 			)
 		})
 		this.setState({message:mList});
-		//console.log("state", this.state.message);
 	})
 }
 	 render() { 

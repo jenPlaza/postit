@@ -1,4 +1,6 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
 import './App.css';
 import Header from './components/header/Header';
 import SideBarLeft from './components/sidebarleft/SideBarLeft';
@@ -16,48 +18,12 @@ import{ BrowserRouter as Router }from 'react-router-dom'
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
-//Smart Component
-class App extends React.Component {
-	render() { 
-	return (
-		<Router>
-		<div style={styles.container}>
-      	<Grid container spacing={0} >
-        <Grid item xs={12} style={styles.headerRow}>
-          <Paper style={styles.paper} variant="outlined"><Header /></Paper>
-        </Grid>
-	  
-		<Grid container spacing={1}>
-         <Grid item xs={6} md={3}>
-        <Paper style={styles.paper} variant="outlined"><SideBarLeft /></Paper>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Paper style={styles.paper} variant="outlined"><Routes /></Paper>
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Paper style={styles.paper} variant="outlined"><SideBarRight /></Paper>
-        </Grid>
-		</Grid>
-	  
-	  <Grid item xs={12} style={styles.footerRow}>
-          <Paper style={styles.paper} variant="outlined"><Footer /></Paper>
-        </Grid>
-      </Grid>
-    </div>
-		</Router>
-		);
-	}
-}
-
-export default App;
-
-const styles ={
-	container:{
-		backgroundImage: 'url(' + imgUrl + ')',						
+const useStyles = makeStyles(theme => ({
+  root: {					
 		height:'auto',
 		flexGrow: 1,
 		overflow:'hidden',
-	},
+  },
 	headerRow:{
 		padding:'3%',
 		backgroundColor:'white',
@@ -66,9 +32,51 @@ const styles ={
 		backgroundColor: "transparent",
 		border:'none',
 	},
+	paperRight:{
+		backgroundColor: "transparent",
+		border:'none',
+		marginTop:'6%',
+	},
 	footerRow:{
 		marginTop:'1%',
 		padding:'3%',
 		backgroundColor:'white',
 	},
+}));
+
+export default function App() {
+  const classes = useStyles();
+  return (
+		<Router>
+		<div className={classes.root} style={styles.container}>
+      	<Grid container spacing={0} >
+        <Grid item xs={12} className={classes.headerRow}>
+          <Paper className={classes.paper} variant="outlined"><Header /></Paper>
+        </Grid>
+	  
+		<Grid container spacing={1}>
+         <Grid item xs={6} md={3}>
+        <Paper className={classes.paper} variant="outlined"><SideBarLeft /></Paper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.paper} variant="outlined"><Routes /></Paper>
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Paper className={classes.paperRight} variant="outlined"><SideBarRight /></Paper>
+        </Grid>
+		</Grid>
+	  
+	  <Grid item xs={12} className={classes.footerRow}>
+          <Paper className={classes.paper} variant="outlined"><Footer /></Paper>
+        </Grid>
+      </Grid>
+    </div>
+		</Router>
+		);
+	}
+
+const styles ={
+	container:{
+		backgroundImage: 'url(' + imgUrl + ')',						
+	}
 }

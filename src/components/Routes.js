@@ -1,4 +1,5 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
 //React Router
 import{ Route, Switch } from 'react-router-dom'
@@ -9,13 +10,18 @@ import Watch from '../pages/Watch'
 import Account from '../pages/Account'
 import NewsFeed from '../pages/NewsFeed';
 
+const useStyles = makeStyles(theme => ({
+  root:{
+		marginTop:'3%',
+		marginLeft:'1%',
+		marginRight:'0.5%',
+	},
+}));
 
-
-//Smart Component  This can be a dummy component also. It does not need a state.
-class Routes extends React.Component {
-	render(){
-		return(
-			<div style={styles.container}>
+export default function Routes() {
+  const classes = useStyles();
+  return (
+		<div className={classes.root}>
 				<Switch>
 					<Route exact path='/' component={NewsFeed} />
 					<Route exact path='/Newsfeed' component={NewsFeed} />
@@ -24,15 +30,5 @@ class Routes extends React.Component {
 					<Route exact path='/Account' component={Account} />
 				</Switch>
 			</div>
-		);
-	}
-}
-export default Routes
-
-const styles ={
-	container:{
-		marginTop:'3%',
-		marginLeft:'1%',
-		marginRight:'0.5%',
-	},
+    );
 }

@@ -1,40 +1,14 @@
 import React from 'react';
 import {FaEdit} from 'react-icons/fa'
 import {MdDelete} from 'react-icons/md'
+
 //Material UI
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from "@material-ui/core/Paper";
 
-//Smart Component
-class ListItem extends React.Component {
-	state ={
-		postListing: []
-	}
-	removeItem = key => {
-		let postL = this.state.postListing
-			this.state.postListing.splice(key,1)
-		this.setState({postListing: this.state.postListing})
-		localStorage.setItem('postListing', JSON.stringify(postL))
-	}
-	 render() { 
-  return (
-				<li key={this.props.id} style={styles.list}>
-	  			<Paper style={styles.paper} variant="outlined">
-					<span>
-						<MdDelete style={styles.mdDelete} size={30} onClick={this.props.dlt}/>
-						<FaEdit style={styles.faEdit} size={30}/>
-					</span>
-					<span style={styles.items}><b>{this.props.val.postTitle}</b></span><br />
-					<span style={styles.items}>{this.props.val.postDescription}</span>
-					</Paper>
-				</li>			
-  	);
-  }
-}
 
-export default ListItem
-
-const styles ={
-	list:{
+const useStyles = makeStyles(theme => ({
+root:{
 		width:'98%',
 		height:'auto',
 		
@@ -55,4 +29,22 @@ const styles ={
 	faEdit:{
 		float:'right',
 	},
+}));
+
+const ListItems = props =>{
+  const classes = useStyles();
+  return (
+		<li key={props.id} className={classes.root}>
+	  			<Paper className={classes.paper} variant="outlined">
+					<span>
+						<MdDelete className={classes.mdDelete} size={30} onClick={props.dlt}/>
+						<FaEdit className={classes.faEdit} size={30}/>
+					</span>
+					<span className={classes.items}><b>{props.val.postTitle}</b></span><br />
+					<span className={classes.items}>{props.val.postDescription}</span>
+					</Paper>
+				</li>
+    );
 }
+
+export default ListItems;

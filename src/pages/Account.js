@@ -1,12 +1,10 @@
 // JavaScript Document
 import React from 'react';
-
-import { Row, Col } from 'react-grid-system';
 //Material UI
 import Grid from "@material-ui/core/Grid";
 
 //Images & Icons
-import Pic from './../images/wonderlaneBoiz.jpg';
+import ProfileImg from './../images/wonderlaneBoiz.jpg';
 
 //Smart Component
 class Account extends React.Component {
@@ -52,7 +50,7 @@ fetchData(){
 		<Grid container spacing={2}>
 	  <h1 style={styles.h1}>Welcome Back, Bryan!</h1>
 	  	<Grid item xs={12} md={7} style={styles.proImg}>
-				<img style={styles.pic} src={Pic} alt="profile picture of man and daughter"/>		
+				<img style={styles.pImg} src={ProfileImg} alt="profile of man and daughter"/>		
         </Grid>
         <Grid item xs={12} md={5} style={styles.proInfo} >
         		{this.state.account}
@@ -74,7 +72,7 @@ const styles ={
 		color:'#ea7a0f',
 		
 	},
-	pic:{
+	pImg:{
 		textAlign:'right',
 		width:'100%',
 	},

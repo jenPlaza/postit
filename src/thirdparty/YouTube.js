@@ -6,15 +6,15 @@ import YouTube from 'react-youtube';
 class ThirdParty extends React.Component {
 	
 	  videoOnReady(event) {
-    // access to player in all event handlers via event.target
+    // access to player
     event.target.playVideo();
   }
 	
 	render() {
     const opts = {
-      height: '190',
-      width: '225',
-      playerVars: { // https://developers.google.com/youtube/player_parameters
+      height: '400',
+      width: '100%',
+      playerVars: { 
         autoplay: 1,
       }
     };
