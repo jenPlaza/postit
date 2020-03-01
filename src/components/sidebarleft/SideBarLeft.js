@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 		marginLeft:'5%',
   },
 	btn:{
-		fontSize:'1.65em',
+		fontSize:'1.25em',
 		marginTop:'5%',
 		color:theme.palette.secondary.main,
 	}

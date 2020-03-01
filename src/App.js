@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 		overflow:'hidden',
   },
 	headerRow:{
-		padding:'3%',
+		padding:'1%',
 		backgroundColor:'white',
 	},
 	paper:{
@@ -75,10 +75,10 @@ export default function App() {
         </Grid>
 	  
 		<Grid container spacing={1}>
-         <Grid item xs={6} md={3}>
+         <Grid item xs={12} md={3}>
         <Paper className={classes.paper} variant="outlined"><SideBarLeft /></Paper>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={5}>
           <Paper className={classes.paper} variant="outlined"><Routes /></Paper>
         </Grid>
         <Grid item xs={12} md={3}>

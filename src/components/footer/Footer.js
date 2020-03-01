@@ -30,7 +30,9 @@ const useStyles = makeStyles(theme => ({
 	logo2:{
 		width:'75%',
 		marginLeft:'-15%',
-		
+    [theme.breakpoints.up('lg')]: {
+     width:'35%',
+    },
 	},
 	a:{
 		color:'grey',
@@ -63,8 +65,8 @@ export default function Footer() {
   return(
     <div className={classes.root}>
       <Grid container spacing={3}>
-	  <Grid item xs={0} md={2}></Grid>
-	  <Grid item xs={3} md={1}>
+	  <Grid item xs={0} md={2} xl={3}></Grid>
+	  <Grid item xs={3} md={1} lg={1}>
           <Paper className={classes.paper} variant="outlined"><img src={logo2} alt="Logo2 icon" className={classes.logo2}/></Paper>
         </Grid>
 	  <Grid item xs={12} md={2}>
@@ -91,6 +93,7 @@ export default function Footer() {
 					<p><a className={classes.a} href='https://reactjs.org'>Code of Contact</a></p>
 		</Paper>
         </Grid>
+	    <Grid item xs={0} md={2}></Grid>
 		<Grid item xs={12} md={12}>
           <Paper className={classes.paper} variant="outlined">
 		<Copyright />

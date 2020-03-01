@@ -1,84 +1,252 @@
-// JavaScript Document
 import React from 'react';
-import SearchInput from '../../components/search/SearchInput';
+import { fade, makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import Badge from '@material-ui/core/Badge';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MailIcon from '@material-ui/icons/Mail';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import MoreIcon from '@material-ui/icons/MoreVert';
+import Link from '@material-ui/core/Link';
 
 //Images & Icons
 import logo from '../../images/postIt.png';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import SettingsIcon from '@material-ui/icons/Settings';
-
-//Material UI
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
-import Grid from "@material-ui/core/Grid";
-import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
-  root:{				
-		flexGrow:'1',
-		overflow:'hidden',
-		textAlign:'left',
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+	  display: 'block',
+	  marginRight: theme.spacing(2),
+	color: theme.palette.primary.main,
+    [theme.breakpoints.up('md')]: {
+    display: 'none',
 	},
-	col:{
-		float:'right',
-	},
-	colName:{
-		float:'right',
-		padding:'0',
-		margin:'0%',
-	},
-	typography:{
-		color:theme.palette.secondary.main
-	},
-	searchBox:{
-	backgroundColor:'rgba(231, 231, 231, 0.8)',
-	border:'none',
-	},
-	search:{
-		height:'32px',
-		backgroundColor:'rgba(231, 231, 231, 0.8)',
-	},
-	goS:{
-		float:'right',
-		marginTop:'-5%',
-		marginRight:'2%',
-		backgroundColor:'transparent',
-	}
+  },
+  logo: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+		marginLeft: theme.spacing(-2),
+		width:'auto',
+    },
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.black, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.black, 0.25),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: theme.spacing(-1),
+      width: '100%',
+    },
+  },
+  searchIcon: {
+    width: theme.spacing(5),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: theme.palette.primary.main,
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 7),
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 200,
+    },
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
 }));
 
 const Links = () => {
 	const classes = useStyles();
   return (
-	 
      <Typography display="block" align="center">
       	<Link className={classes.typography} href="http://localhost:3000/Account">
-	  		<SettingsIcon />
+	  		My account
 	  	</Link>
     </Typography>
   );
 }
 
-export default function Header() {
+export default function PrimarySearchAppBar() {
   const classes = useStyles();
-  return(
-    <div className={classes.root}>
-		<Box component="span" display="inline" p={1} m={1} className={classes.col}><Links /></Box>
-		<Box component="span" display="inline" p={1} m={1} className={classes.colName}><p className={classes.typography}>Bryan Rogers</p></Box>
-		<Box component="span" display="inline" p={1} m={1} className={classes.col}><AccountBoxIcon /></Box>
-	
-		<Grid container spacing={1}>
-	  	<Grid item xs={12} md={4}>
-				<img src={logo} alt="Logo icon"/>		
-        </Grid>
-        <Grid item xs={12} className={classes.searchBox} >
-        		<SearchInput className={classes.search}/>
-				<SearchIcon className={classes.goS}/>
-        </Grid>
-      </Grid>
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleProfileMenuOpen = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = event => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Bryan Rogers</MenuItem>
+      <MenuItem onClick={handleMenuClose}><Links /></MenuItem>
+    </Menu>
+  );
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton aria-label="show 4 new mails" color="primary">
+          <Badge badgeContent={4} color="secondary">
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <p>Messages</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="show 11 new notifications" color="inherit">
+          <Badge badgeContent={11} color="secondary">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Bryan Rogers</p>
+      </MenuItem>
+    </Menu>
+  );
+
+  return (
+    <div className={classes.grow}>
+      <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
+        <Toolbar>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography className={classes.logo} >
+            <img src={logo} alt="Logo icon"/>
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <IconButton aria-label="show 4 new mails" color="primary">
+              <Badge badgeContent={4} color="secondary">
+                <MailIcon />
+              </Badge>
+            </IconButton>
+            <IconButton aria-label="show 17 new notifications" color="primary">
+              <Badge badgeContent={17} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="primary"
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
     </div>
-	 
   );
 }
-
