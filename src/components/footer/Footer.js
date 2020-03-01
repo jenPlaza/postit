@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
 		marginBottom:'2%',
 	},
 	typography:{
-		color:'#ea7a0f',
+		color:theme.palette.secondary.main,
 	}
 }));
 

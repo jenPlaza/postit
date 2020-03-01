@@ -6,6 +6,23 @@ import Grid from "@material-ui/core/Grid";
 //Images & Icons
 import ProfileImg from './../images/wonderlaneBoiz.jpg';
 
+import { createMuiTheme } from "@material-ui/core/styles";
+const theme = createMuiTheme({
+	  typography: {
+    fontFamily: 'Lora',
+  },
+	palette: {
+    primary: {
+      light: '#B9B9B9',
+      main: '#000000',
+    },
+    secondary: {
+      main: '#ea7a0f',
+      contrastText: '#ffffff',
+    },
+  },
+});
+
 //Smart Component
 class Account extends React.Component {
 	state ={
@@ -69,7 +86,7 @@ const styles ={
 	h1:{
 		textAlign:'center',
 		fontSize:'3em',
-		color:'#ea7a0f',
+		color: theme.palette.secondary.main
 		
 	},
 	pImg:{
@@ -83,7 +100,7 @@ const styles ={
 	proInfo:{
 		marginTop:'-1%',
 		textAlign:'left',
-		color:'#ea7a0f',
+		color:theme.palette.secondary.main,
 		paddingBottom:'5%',
 	},
 }

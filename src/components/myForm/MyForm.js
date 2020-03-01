@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
   root:{
 		backgroundColor:'rgba(135, 135, 135, 0.7)',
-		color:'white',
+		color:theme.palette.secondary.main,
 		display:'flex',
 		flexDirection:'column',
 		borderRadius:'5px',
@@ -19,14 +19,15 @@ const useStyles = makeStyles(theme => ({
 		margin:'1%',
 		marginTop:'-1%',
 	},
-	h2:{
+	h1:{
 		textAlign:'center',
+      fontSize: '2.5em',
 	},
 	p:{
 		textAlign:'left',
 		margin:'3%',
 		marginTop:'0%',
-		color:'white',
+		color:theme.palette.secondary.contrastText,
 	},
 }));
 
@@ -36,7 +37,7 @@ const MyForm = props =>{
 		<div>
       	<form className={classes.root} onSubmit={props.handleSubmit}>
 
-		<h2 className={classes.h2}> Create A Post</h2>
+		<h1 className={classes.h1} font="Roboto"> Create A Post</h1>
 		<input type='text' className={classes.input} name='postTitle' value={props.postTitle} onChange={props.titleBind} placeholder="Title" required/>
 		<p className={classes.p}>New Item:{props.titleInput}</p>
 

@@ -18,6 +18,25 @@ import{ BrowserRouter as Router }from 'react-router-dom'
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
+
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Lora',
+  },
+	palette: {
+    primary: {
+      light: '#B9B9B9',
+      main: '#000000',
+    },
+    secondary: {
+      main: '#ea7a0f',
+	  light:"transparent",
+      contrastText: '#ffffff',
+    },
+  },
+});
+
 const useStyles = makeStyles(theme => ({
   root: {					
 		height:'auto',
@@ -47,6 +66,7 @@ const useStyles = makeStyles(theme => ({
 export default function App() {
   const classes = useStyles();
   return (
+	  <MuiThemeProvider theme={theme}>
 		<Router>
 		<div className={classes.root} style={styles.container}>
       	<Grid container spacing={0} >
@@ -72,6 +92,7 @@ export default function App() {
       </Grid>
     </div>
 		</Router>
+	   </MuiThemeProvider>
 		);
 	}
 

@@ -19,13 +19,13 @@ const useStyles = makeStyles(theme => ({
 	btn:{
 		fontSize:'1.65em',
 		marginTop:'5%',
-		color:'white',
+		color:theme.palette.secondary.main,
 	}
 }));
 
 const Links = () => {
   return (
-    <Typography display="block" variant="body" align="left">
+    <Typography display="block" variant="body" align="left" color="secondary">
 	  <Box component="span" display="block" p={2} m={1} >
       	<Link color="inherit" href="http://localhost:3000/NewsFeed">News Feed</Link>
 	  	{' '}

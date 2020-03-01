@@ -4,7 +4,7 @@ import SearchInput from '../../components/search/SearchInput';
 
 //Images & Icons
 import logo from '../../images/postIt.png';
-import {GoSearch} from 'react-icons/go';
+import SearchIcon from '@material-ui/icons/Search';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 
@@ -14,7 +14,6 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
 import Box from '@material-ui/core/Box';
-
 
 const useStyles = makeStyles(theme => ({
   root:{				
@@ -31,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 		margin:'0%',
 	},
 	typography:{
-		color:'#ea7a0f',
+		color:theme.palette.secondary.main
 	},
 	searchBox:{
 	backgroundColor:'rgba(231, 231, 231, 0.8)',
@@ -43,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	goS:{
 		float:'right',
-		marginTop:'-2.25%',
+		marginTop:'-5%',
 		marginRight:'2%',
 		backgroundColor:'transparent',
 	}
@@ -52,7 +51,8 @@ const useStyles = makeStyles(theme => ({
 const Links = () => {
 	const classes = useStyles();
   return (
-     <Typography display="block" align="center" >
+	 
+     <Typography display="block" align="center">
       	<Link className={classes.typography} href="http://localhost:3000/Account">
 	  		<SettingsIcon />
 	  	</Link>
@@ -74,10 +74,11 @@ export default function Header() {
         </Grid>
         <Grid item xs={12} className={classes.searchBox} >
         		<SearchInput className={classes.search}/>
-				<GoSearch className={classes.goS}/>
+				<SearchIcon className={classes.goS}/>
         </Grid>
       </Grid>
     </div>
+	 
   );
 }
 

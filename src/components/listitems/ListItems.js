@@ -1,17 +1,16 @@
 import React from 'react';
-import {FaEdit} from 'react-icons/fa'
-import {MdDelete} from 'react-icons/md'
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from "@material-ui/core/Paper";
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 const useStyles = makeStyles(theme => ({
 root:{
 		width:'98%',
 		height:'auto',
-		
 		listStyleType:'none',
 		padding:'1%',
 		marginTop:'1%',
@@ -23,10 +22,11 @@ root:{
 	items:{
 		marginLeft:'3%',
 	},
-	mdDelete:{
+	delete:{
 		float:'right',
+		color:theme.palette.secondary.main,
 	},
-	faEdit:{
+	edit:{
 		float:'right',
 	},
 }));
@@ -35,10 +35,10 @@ const ListItems = props =>{
   const classes = useStyles();
   return (
 		<li key={props.id} className={classes.root}>
-	  			<Paper className={classes.paper} variant="outlined">
+	  			<Paper variant="outlined">
 					<span>
-						<MdDelete className={classes.mdDelete} size={30} onClick={props.dlt}/>
-						<FaEdit className={classes.faEdit} size={30}/>
+						<DeleteIcon className={classes.delete} onClick={props.dlt}/>
+						<EditIcon className={classes.edit} />
 					</span>
 					<span className={classes.items}><b>{props.val.postTitle}</b></span><br />
 					<span className={classes.items}>{props.val.postDescription}</span>

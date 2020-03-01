@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
  
 //class Search extends Component{
-	render(){
+	//render(){
 const Search = props =>{
 	return(
 		<li key={this.props.id} >
@@ -11,6 +11,5 @@ const Search = props =>{
 		</li>
 		)
 	}
-}
 
 export default Search

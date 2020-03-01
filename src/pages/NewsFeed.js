@@ -1,15 +1,14 @@
 import React from 'react';
 import ListItem from '../components/listitems/ListItems';
 import MyForm from '../components/myForm/MyForm';
+/*import Search from '../components/search/Search';*/
 
 //Material UI
 import Grid from '@material-ui/core/Grid';
 
-
 /*function searchMe(search){
 	return function(searchTitle){
 		return searchTitle.postTitle.toLowerCase().includes(search.toLowerCase()) || !search
-		//return searchTitle.titleInput.includes(search) || !search
 	}
 }*/
 
@@ -42,9 +41,6 @@ if(localStorage.getItem('postListing')){
 		localStorage.setItem('postListing', JSON.stringify(postL))
 	}
 
-	//Make this global. You can write a function that will take the value based off the name attribute.
-	//Try to fix this for week 3
-
 	titleBind = e => {
 		this.setState({titleInput: e.target.value})
 	}
@@ -56,7 +52,7 @@ if(localStorage.getItem('postListing')){
 	this.setState({search: e.target.value})
 }	*/
 	render() { 
-	/*	const{search} = this.state
+		/*const{search} = this.state
 		let searchlist = this.state.postListing.filter(searchMe(search)).map((element,i) => {
 			  return <Search key={i} val={element}/>
 	  })*/

@@ -19,7 +19,8 @@
     "react-scripts": "3.4.0",
     "react-search": "^2.1.1",
     "react-youtube": "^7.9.0",
-    "redux-form-validators": "^3.3.2"
+    "redux-form-validators": "^3.3.2",
+    "typeface-roboto": "0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",

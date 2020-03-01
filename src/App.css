@@ -18,3 +18,15 @@ form, li{
 	backgroundColor:'rgba(185, 185, 185, 0.6)',
 	/*backgroundColor:'#B9B9B9';*/
 }
+
+/***********************Typography****************/
+@import url('https://fonts.googleapis.com/css?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:700&display=swap');
+body, p {
+    font-family: Lora, sans-serif;
+}
+
+h1, h2 {
+    font-family: Yellowtail, sans-serif;
+}

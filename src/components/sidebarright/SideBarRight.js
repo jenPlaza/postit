@@ -6,7 +6,6 @@ import whyBlog from '../../images/whyBlog.jpeg'
 import socialMedia from '../../images/socialMedia.jpg'
 
 //Material UI
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';

@@ -1,6 +1,25 @@
 import React from 'react';
-import {FaEdit} from 'react-icons/fa'
-import {MdDelete} from 'react-icons/md'
+//Material UI
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Paper from "@material-ui/core/Paper";
+
+import { createMuiTheme } from "@material-ui/core/styles";
+const theme = createMuiTheme({
+	  typography: {
+    fontFamily: 'Lora',
+  },
+	palette: {
+    primary: {
+      light: '#B9B9B9',
+      main: '#000000',
+    },
+    secondary: {
+      main: '#ea7a0f',
+      contrastText: '#ffffff',
+    },
+  },
+});
 
 //Smart Component
 class Messages extends React.Component {
@@ -10,7 +29,7 @@ class Messages extends React.Component {
 
 	removeItem = key => {
 		let messageL = this.state.messageListing
-			this.state.messageListing.splice(key,1)
+		this.state.messageListing.splice(key,1)
 		this.setState({messageListing: this.state.messageListing})
 		localStorage.setItem('messageListing', JSON.stringify(messageL))
 	}
@@ -25,14 +44,16 @@ class Messages extends React.Component {
 		let mList = data.results.map((use)=>{
 			return(
 				  <li key={this.props.id} style={styles.list}>
+				<Paper variant="outlined">
 				<span>
-					<MdDelete style={styles.mdDelete} size={30} onClick={this.props.dlt}/>
-					<FaEdit style={styles.faEdit} size={30}/>
+					<DeleteIcon style={styles.delete} size={30} onClick={this.props.dlt}/>
+					<EditIcon style={styles.edit} size={30}/>
 				</span>
 				<span key={use.results}>
-				<p><b>Username:</b> {use.user.username}<br /><b>Email:</b> {use.user.email}<br/><b>Date:</b> {use.user.registered} - <b>Time:</b>{use.user.dob}<br /><br />{use.user.sha256}</p>
+				<p style={styles.p}><b>Username:</b> {use.user.username}<br /><b>Email:</b> {use.user.email}<br/><b>Date:</b> {use.user.registered} - <b>Time:</b>{use.user.dob}<br /><br />{use.user.sha256}</p>
 
 				</span>
+				</Paper>
 				</li>
 			)
 		})
@@ -52,7 +73,7 @@ const styles ={
 	list:{
 		width:'90%',
 		height:'auto',
-		padding:'4%',
+		padding:'2%',
 		listStyleType:'none',
 		marginTop:'3%',
 		marginLeft:'1%',
@@ -62,10 +83,14 @@ const styles ={
 		textAlign:'left',
 		wordWrap:'break-word',
 	},
-	mdDelete:{
+	delete:{
+		float:'right',
+		color:theme.palette.secondary.main,
+	},
+	edit:{
 		float:'right',
 	},
-	faEdit:{
-		float:'right',
-	},
+	p:{
+		padding:'2%',
+	}
 }
