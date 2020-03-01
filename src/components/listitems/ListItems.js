@@ -6,7 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-
+//styles
 const useStyles = makeStyles(theme => ({
 root:{
 		width:'98%',
@@ -31,6 +31,7 @@ root:{
 	},
 }));
 
+//Dummy component
 const ListItems = props =>{
   const classes = useStyles();
   return (

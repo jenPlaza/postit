@@ -10,7 +10,7 @@ class ThirdParty extends React.Component {
     event.target.playVideo();
   }
 	
-	render() {
+render() {
     const opts = {
       height: '400',
       width: '100%',
@@ -25,4 +25,5 @@ class ThirdParty extends React.Component {
     );
   }
 }
+
 export default ThirdParty

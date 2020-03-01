@@ -19,6 +19,7 @@ import Link from '@material-ui/core/Link';
 //Images & Icons
 import logo from '../../images/postIt.png';
 
+//styles
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -99,6 +100,7 @@ const Links = () => {
   );
 }
 
+//exporting a single class 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);

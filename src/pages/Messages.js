@@ -4,6 +4,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Paper from "@material-ui/core/Paper";
 
+//color theme
 import { createMuiTheme } from "@material-ui/core/styles";
 const theme = createMuiTheme({
 	  typography: {
@@ -23,19 +24,23 @@ const theme = createMuiTheme({
 
 //Smart Component
 class Messages extends React.Component {
+	//declaring state and new object
 	state ={
 		messageListing: []
 	}
 
+//function to remove item
 	removeItem = key => {
 		let messageL = this.state.messageListing
 		this.state.messageListing.splice(key,1)
 		this.setState({messageListing: this.state.messageListing})
 		localStorage.setItem('messageListing', JSON.stringify(messageL))
 	}
+	
 	componentDidMount(){
 	this.fetchData();
 }
+//fetch Api data and map json results in a list format
 	fetchData(){
 	fetch('https://randomuser.me/api/0.8/?results=10&nat=us')
 		.then(results =>{

@@ -11,7 +11,7 @@ import Link from '@material-ui/core/Link';
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
-
+//styles
 const useStyles = makeStyles(theme => ({
   root:{				
 		height:'auto',
@@ -60,6 +60,7 @@ const Copyright = () => {
   );
 }
 
+//exporting a class footer
 export default function Footer() {
   const classes = useStyles();
   return(

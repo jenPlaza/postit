@@ -26,8 +26,8 @@ const Links = () => {
   );
 }
 
-
-export default function SideBarLeft() {
+//exporting class SideBarRight
+export default function SideBarRight() {
   return (
 		<Links />
     );

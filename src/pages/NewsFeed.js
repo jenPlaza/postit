@@ -1,17 +1,11 @@
 import React from 'react';
 import ListItem from '../components/listitems/ListItems';
 import MyForm from '../components/myForm/MyForm';
-/*import Search from '../components/search/Search';*/
 
 //Material UI
 import Grid from '@material-ui/core/Grid';
 
-/*function searchMe(search){
-	return function(searchTitle){
-		return searchTitle.postTitle.toLowerCase().includes(search.toLowerCase()) || !search
-	}
-}*/
-
+//Smart component
 class NewsFeed extends React.Component {
 	state ={
 		titleInput:'',
@@ -22,18 +16,23 @@ class NewsFeed extends React.Component {
 		search:'',
 	}
 
+//use componentDidMount to store new post listing onto object
 	componentDidMount(){
 if(localStorage.getItem('postListing')){
 		let postL = JSON.parse(localStorage.getItem('postListing'))
 		this.setState({postListing:postL})
 	}
 }
+
+//function to add a new post using arrow function expressions
 	handleSubmit = e => {
 	e.preventDefault();
 	let postL = [...this.state.postListing, {postTitle:this.state.titleInput, postDescription:this.state.descriptionInput}]
 	localStorage.setItem('postListing', JSON.stringify(postL))
 	e.target.reset()
   }
+	
+//function to remove a new post using arrow function expressions
 	removeItem = key => {
 		let postL = this.state.postListing
 			this.state.postListing.splice(key,1)
@@ -41,6 +40,7 @@ if(localStorage.getItem('postListing')){
 		localStorage.setItem('postListing', JSON.stringify(postL))
 	}
 
+	//binding variables to real time
 	titleBind = e => {
 		this.setState({titleInput: e.target.value})
 	}
@@ -48,15 +48,7 @@ if(localStorage.getItem('postListing')){
 		this.setState({descriptionInput: e.target.value})
 	}
 	
-	/*searchInfo = e =>{
-	this.setState({search: e.target.value})
-}	*/
 	render() { 
-		/*const{search} = this.state
-		let searchlist = this.state.postListing.filter(searchMe(search)).map((element,i) => {
-			  return <Search key={i} val={element}/>
-	  })*/
-	  
 			let list = this.state.postListing.map((element,i) => {
 		  return <ListItem key={i} val={element} dlt={()=>this.removeItem(i)}/>
 	  })

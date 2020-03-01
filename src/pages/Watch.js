@@ -6,6 +6,7 @@ import YouTube from '../thirdparty/YouTube';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
+//style
 const useStyles = makeStyles(theme => ({
   video:{
 	  marginTop:'3%',
@@ -13,6 +14,7 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
+//exporting class watch
 export default function Watch() {
   const classes = useStyles();
   return (

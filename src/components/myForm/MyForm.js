@@ -4,7 +4,7 @@ import Button from '../buttons/Button'
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//styles
 const useStyles = makeStyles(theme => ({
   root:{
 		backgroundColor:'rgba(135, 135, 135, 0.7)',
@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
+//Dummy Component
 const MyForm = props =>{
   const classes = useStyles();
   return (

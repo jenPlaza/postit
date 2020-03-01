@@ -25,17 +25,24 @@ const theme = createMuiTheme({
 
 //Smart Component
 class Account extends React.Component {
+	//declaring state and new object
 	state ={
 		accountListing: []
 	}
 
+//calling fetchData function
 	componentDidMount(){
 	this.fetchData();
 }
 
+//fetching API
 fetchData(){
 	fetch('https://randomuser.me/api/0.8/?results=1&nat=us&gender=male')
+	
+	//retrieve data as json.
       .then(results => results.json()).then(data =>{
+		
+		//map API resluts and save info in profile
 		 let profile = data.results.map((use)=>{
 			return(
 				  <div key={this.props.id} style={styles.list}>
@@ -58,7 +65,6 @@ fetchData(){
 		})
 		
 		this.setState({account:profile});
-		//console.log("state", this.state.account);
 	})
 }
 	 render() { 

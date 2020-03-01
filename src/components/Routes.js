@@ -10,6 +10,7 @@ import Watch from '../pages/Watch'
 import Account from '../pages/Account'
 import NewsFeed from '../pages/NewsFeed';
 
+//styles
 const useStyles = makeStyles(theme => ({
   root:{
 		marginTop:'3%',
@@ -18,6 +19,7 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
+//exporting class Routes
 export default function Routes() {
   const classes = useStyles();
   return (
