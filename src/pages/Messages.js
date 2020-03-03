@@ -6,20 +6,21 @@ import Paper from "@material-ui/core/Paper";
 
 //color theme
 import { createMuiTheme } from "@material-ui/core/styles";
+
 const theme = createMuiTheme({
-	  typography: {
-    fontFamily: 'Lora',
-  },
+	typography: {
+    	fontFamily: 'Lora',
+	},
 	palette: {
-    primary: {
-      light: '#B9B9B9',
-      main: '#000000',
-    },
-    secondary: {
-      main: '#ea7a0f',
-      contrastText: '#ffffff',
-    },
-  },
+		primary: {
+		light: '#B9B9B9',
+		main: '#000000',
+		},
+		secondary: {
+		main: '#ea7a0f',
+		contrastText: '#ffffff',
+		},
+	},
 });
 
 //Smart Component
@@ -42,34 +43,41 @@ class Messages extends React.Component {
 }
 //fetch Api data and map json results in a list format
 	fetchData(){
-	fetch('https://randomuser.me/api/0.8/?results=10&nat=us')
-		.then(results =>{
-		return results.json();
-	}).then(data =>{
-		let mList = data.results.map((use)=>{
-			return(
-				  <li key={this.props.id} style={styles.list}>
-				<Paper variant="outlined">
-				<span>
-					<DeleteIcon style={styles.delete} size={30} onClick={this.props.dlt}/>
-					<EditIcon style={styles.edit} size={30}/>
-				</span>
-				<span key={use.results}>
-				<p style={styles.p}><b>Username:</b> {use.user.username}<br /><b>Email:</b> {use.user.email}<br/><b>Date:</b> {use.user.registered} - <b>Time:</b>{use.user.dob}<br /><br />{use.user.sha256}</p>
-
-				</span>
-				</Paper>
-				</li>
-			)
+		fetch('https://randomuser.me/api/0.8/?results=10&nat=us')
+			.then(results =>{
+			return results.json();
+		}).then(data =>{
+			let mList = data.results.map((use)=>{
+				return(
+					//This should be a seperate component.
+					<li key={this.props.id} style={styles.list}>
+						<Paper variant="outlined">
+							<span>
+								<DeleteIcon style={styles.delete} size={30} onClick={this.props.dlt}/>
+								<EditIcon style={styles.edit} size={30}/>
+							</span>
+							<span key={use.results}>
+								<p style={styles.p}>
+									{/* You should not use inline style tags. */}
+									<b>Username:</b> {use.user.username}
+									<b>Email:</b> {use.user.email}
+									<b>Date:</b> {use.user.registered} - <b>Time:</b>{use.user.dob}
+									{/* You should pass this through props, then use the image tag and require.*/}
+									<img alt="Messages" src="{use.user.sha256}" />
+								</p>
+							</span>
+						</Paper>
+					</li>
+				)
+			})
+			this.setState({message:mList});
 		})
-		this.setState({message:mList});
-	})
-}
-	 render() { 
-  return (
-		<div>{this.state.message}</div>			
-  	);
-  }
+	}
+	render() { 
+		return (
+			<div>{this.state.message}</div>			
+		);
+	}
 }
 
 export default Messages
