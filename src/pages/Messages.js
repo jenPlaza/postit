@@ -56,7 +56,6 @@ class Messages extends React.Component {
 				</span>
 				<span key={use.results}>
 				<p style={styles.p}><b>Username:</b> {use.user.username}<br /><b>Email:</b> {use.user.email}<br/><b>Date:</b> {use.user.registered} - <b>Time:</b>{use.user.dob}<br /><br />{use.user.sha256}</p>
-
 				</span>
 				</Paper>
 				</li>
