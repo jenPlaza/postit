@@ -1,11 +1,11 @@
 // JavaScript Document
 import React from 'react';
 //React Router
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 //Material UI
-import { Grid, Container, Typography, Box, Link } from '@material-ui/core';
+import { Grid, Container, Typography, Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,12 +25,12 @@ const Links = () => {
   return (
     <Typography display="block" variant="body" align="left" color="secondary">
       <Box component="span" display="block" p={2} m={1}>
-        <Link style={{ color: '#ea7a0f' }} href="/postit/newsfeed">
+        <Link style={{ color: '#ea7a0f' }} to="/postit/newsfeed">
           News Feed
         </Link>{' '}
       </Box>
       <Box component="span" display="block" p={2} m={1}>
-        <Link style={{ color: '#ea7a0f' }} href="/postit/messages">
+        <Link style={{ color: '#ea7a0f' }} to="/postit/messages">
           Messages
         </Link>{' '}
       </Box>

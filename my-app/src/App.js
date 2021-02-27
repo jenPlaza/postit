@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/header/Header';
@@ -8,15 +8,17 @@ import Routes from './components/Routes';
 import Footer from './components/footer/Footer';
 import SideBarRight from './components/sidebarright/SideBarRight';
 
+//pages
+import Messages from './pages/Messages';
+import Watch from './pages/Watch';
+import Account from './pages/Account';
+import NewsFeed from './pages/NewsFeed';
+
 //Images & Icons
 import imgUrl from '../src/images/postBkg.jpg';
 
-//React Router
-import { BrowserRouter as Router } from 'react-router-dom';
-
 //Material UI
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import { makeStyles, Paper, Grid } from '@material-ui/core';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
@@ -84,7 +86,34 @@ export default function App() {
               </Grid>
               <Grid item xs={12} md={5}>
                 <Paper className={classes.paper} variant="outlined">
-                  <Routes />
+                  {/* Routes*/}
+                  <Switch>
+                    <Route
+                      exact
+                      path={process.env.PUBLIC_URL + '/'}
+                      component={NewsFeed}
+                    />
+                    <Route
+                      exact
+                      path={process.env.PUBLIC_URL + '/newsfeed'}
+                      component={NewsFeed}
+                    />
+                    <Route
+                      exact
+                      path={process.env.PUBLIC_URL + '/messages'}
+                      component={Messages}
+                    />
+                    <Route
+                      exact
+                      path={process.env.PUBLIC_URL + '/watch'}
+                      component={Watch}
+                    />
+                    <Route
+                      exact
+                      path={process.env.PUBLIC_URL + '/account'}
+                      component={Account}
+                    />
+                  </Switch>
                 </Paper>
               </Grid>
               <Grid item xs={12} md={3}>
