@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.ac267e16.chunk.css",
-    "main.js": "/static/js/main.1ed4defa.chunk.js",
-    "main.js.map": "/static/js/main.1ed4defa.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.107bb8ca.js",
-    "runtime-main.js.map": "/static/js/runtime-main.107bb8ca.js.map",
-    "static/js/2.e5f2ae02.chunk.js": "/static/js/2.e5f2ae02.chunk.js",
-    "static/js/2.e5f2ae02.chunk.js.map": "/static/js/2.e5f2ae02.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.7491d656dee7913d72a51cec56e48972.js": "/precache-manifest.7491d656dee7913d72a51cec56e48972.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.ac267e16.chunk.css.map": "/static/css/main.ac267e16.chunk.css.map",
-    "static/js/2.e5f2ae02.chunk.js.LICENSE.txt": "/static/js/2.e5f2ae02.chunk.js.LICENSE.txt",
-    "static/media/postBkg.jpg": "/static/media/postBkg.5ee33dd5.jpg",
-    "static/media/postIt.png": "/static/media/postIt.13ca8d7e.png",
-    "static/media/socialMedia.jpg": "/static/media/socialMedia.dfae98ad.jpg",
-    "static/media/whyBlog.jpeg": "/static/media/whyBlog.33819297.jpeg",
-    "static/media/wonderlaneBoiz.jpg": "/static/media/wonderlaneBoiz.58e8a564.jpg"
+    "main.css": "/postit/static/css/main.ac267e16.chunk.css",
+    "main.js": "/postit/static/js/main.206f27de.chunk.js",
+    "main.js.map": "/postit/static/js/main.206f27de.chunk.js.map",
+    "runtime-main.js": "/postit/static/js/runtime-main.f6fbf064.js",
+    "runtime-main.js.map": "/postit/static/js/runtime-main.f6fbf064.js.map",
+    "static/js/2.50fbf4fe.chunk.js": "/postit/static/js/2.50fbf4fe.chunk.js",
+    "static/js/2.50fbf4fe.chunk.js.map": "/postit/static/js/2.50fbf4fe.chunk.js.map",
+    "index.html": "/postit/index.html",
+    "precache-manifest.173218d89506cfe3c2ec4b98ebc9d238.js": "/postit/precache-manifest.173218d89506cfe3c2ec4b98ebc9d238.js",
+    "service-worker.js": "/postit/service-worker.js",
+    "static/css/main.ac267e16.chunk.css.map": "/postit/static/css/main.ac267e16.chunk.css.map",
+    "static/js/2.50fbf4fe.chunk.js.LICENSE.txt": "/postit/static/js/2.50fbf4fe.chunk.js.LICENSE.txt",
+    "static/media/postBkg.jpg": "/postit/static/media/postBkg.5ee33dd5.jpg",
+    "static/media/postIt.png": "/postit/static/media/postIt.13ca8d7e.png",
+    "static/media/socialMedia.jpg": "/postit/static/media/socialMedia.dfae98ad.jpg",
+    "static/media/whyBlog.jpeg": "/postit/static/media/whyBlog.33819297.jpeg",
+    "static/media/wonderlaneBoiz.jpg": "/postit/static/media/wonderlaneBoiz.58e8a564.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.107bb8ca.js",
-    "static/js/2.e5f2ae02.chunk.js",
+    "static/js/runtime-main.f6fbf064.js",
+    "static/js/2.50fbf4fe.chunk.js",
     "static/css/main.ac267e16.chunk.css",
-    "static/js/main.1ed4defa.chunk.js"
+    "static/js/main.206f27de.chunk.js"
   ]
 }
