@@ -43,26 +43,6 @@ class Messages extends React.Component {
 }
 //fetch Api data and map json results in a list format
 	fetchData(){
-<<<<<<< HEAD:my-app/src/pages/Messages.js
-	fetch('https://randomuser.me/api/0.8/?results=10&nat=us')
-		.then(results =>{
-		return results.json();
-	}).then(data =>{
-		let mList = data.results.map((use)=>{
-			return(
-				  <li key={this.props.id} style={styles.list}>
-				<Paper variant="outlined">
-				<span>
-					<DeleteIcon style={styles.delete} size={30} onClick={this.props.dlt}/>
-					<EditIcon style={styles.edit} size={30}/>
-				</span>
-				<span key={use.results}>
-				<p style={styles.p}><b>Username:</b> {use.user.username}<br /><b>Email:</b> {use.user.email}<br/><b>Date:</b> {use.user.registered} - <b>Time:</b>{use.user.dob}<br /><br />{use.user.sha256}</p>
-				</span>
-				</Paper>
-				</li>
-			)
-=======
 		fetch('https://randomuser.me/api/0.8/?results=10&nat=us')
 			.then(results =>{
 			return results.json();
@@ -91,7 +71,7 @@ class Messages extends React.Component {
 				)
 			})
 			this.setState({message:mList});
->>>>>>> 64e5b3e3b69646bc0c3b84eb8cabbbad10bb21a6:src/pages/Messages.js
+
 		})
 	}
 	render() { 
