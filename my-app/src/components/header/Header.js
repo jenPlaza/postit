@@ -20,24 +20,24 @@ import Link from '@material-ui/core/Link';
 import logo from '../../images/postIt.png';
 
 //styles
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
   menuButton: {
-	  display: 'block',
-	  marginRight: theme.spacing(2),
-	color: theme.palette.primary.main,
+    display: 'block',
+    marginRight: theme.spacing(2),
+    color: theme.palette.primary.main,
     [theme.breakpoints.up('md')]: {
-    display: 'none',
-	},
+      display: 'none',
+    },
   },
   logo: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'block',
-		marginLeft: theme.spacing(-2),
-		width:'auto',
+      marginLeft: theme.spacing(-2),
+      width: 'auto',
     },
   },
   search: {
@@ -90,17 +90,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Links = () => {
-	const classes = useStyles();
+  const classes = useStyles();
   return (
-     <Typography display="block" align="center">
-      	<Link className={classes.typography} href="http://localhost:3000/Account">
-	  		My account
-	  	</Link>
+    <Typography display="block" align="center">
+      <Link className={classes.typography} href="http://localhost:3000/Account">
+        My account
+      </Link>
     </Typography>
   );
-}
+};
 
-//exporting a single class 
+//exporting a single class
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -109,7 +109,7 @@ export default function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = event => {
+  const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -122,7 +122,7 @@ export default function PrimarySearchAppBar() {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = event => {
+  const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
@@ -138,7 +138,9 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Bryan Rogers</MenuItem>
-      <MenuItem onClick={handleMenuClose}><Links /></MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <Links />
+      </MenuItem>
     </Menu>
   );
 
@@ -185,7 +187,14 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
+      <AppBar
+        position="static"
+        style={{
+          background: 'transparent',
+          boxShadow: 'none',
+          marginTop: '5%',
+        }}
+      >
         <Toolbar>
           <IconButton
             edge="start"
@@ -195,8 +204,8 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.logo} >
-            <img src={logo} alt="Logo icon"/>
+          <Typography className={classes.logo}>
+            <img src={logo} alt="Logo icon" />
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
