@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/header/Header';
 import SideBarLeft from './components/sidebarleft/SideBarLeft';
-import Routes from './components/Routes';
 import Footer from './components/footer/Footer';
 import SideBarRight from './components/sidebarright/SideBarRight';
 

@@ -4,26 +4,26 @@ import YouTube from 'react-youtube';
 
 //Smart Component
 class ThirdParty extends React.Component {
-	
-	  videoOnReady(event) {
+  videoOnReady(event) {
     // access to player
     event.target.playVideo();
   }
-	
-render() {
+
+  render() {
     const opts = {
       height: '400',
       width: '100%',
-      playerVars: { 
+      playerVars: {
         autoplay: 1,
-      }
+        mute: 1,
+      },
     };
- 
-	const {videoId}= this.props
+
+    const { videoId } = this.props;
     return (
-		<YouTube videoId={videoId} opts={opts} onReady={this.videoOnReady}/>
+      <YouTube videoId={videoId} opts={opts} onReady={this.videoOnReady} />
     );
   }
 }
 
-export default ThirdParty
+export default ThirdParty;
