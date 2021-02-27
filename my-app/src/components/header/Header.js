@@ -93,7 +93,7 @@ const Links = () => {
   const classes = useStyles();
   return (
     <Typography display="block" align="center">
-      <Link className={classes.typography} href="/account">
+      <Link className={classes.typography} to="/postit/account">
         My account
       </Link>
     </Typography>
