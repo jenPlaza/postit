@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -14,7 +15,6 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import Link from '@material-ui/core/Link';
 
 //Images & Icons
 import logo from '../../images/postIt.png';
@@ -93,7 +93,7 @@ const Links = () => {
   const classes = useStyles();
   return (
     <Typography display="block" align="center">
-      <Link className={classes.typography} href="http://localhost:3000/Account">
+      <Link className={classes.typography} href="/account">
         My account
       </Link>
     </Typography>
